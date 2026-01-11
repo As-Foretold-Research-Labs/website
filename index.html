@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>As Foretold Labs | Coming Soon</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="As Foretold Labs - The future is being written. Join us on our journey to redefine what's possible.">
+    <meta name="keywords" content="As Foretold Labs, technology, innovation, future, research">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="As Foretold Labs | Coming Soon">
+    <meta property="og:description"
+        content="The future is being written. Join us on our journey to redefine what's possible.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== CSS RESET & BASE ===== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100vh;
+            height: 100dvh;
+            width: 100vw;
+            overflow: hidden;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* ===== VIDEO BACKGROUND ===== */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .video-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg,
+                    rgba(10, 10, 30, 0.85) 0%,
+                    rgba(20, 10, 40, 0.75) 50%,
+                    rgba(10, 10, 30, 0.85) 100%);
+        }
+
+        /* ===== MAIN CONTAINER ===== */
+        .container {
+            height: 100vh;
+            height: 100dvh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        /* ===== HERO CONTENT ===== */
+        .hero {
+            text-align: center;
+            max-width: 800px;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        /* ===== LOGO STACK ===== */
+        .logo-stack {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .logo-mark {
+            width: clamp(64px, 12vw, 120px);
+            height: auto;
+            display: block;
+        }
+
+        .brand-name {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff 0%, #a78bfa 50%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .tagline {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .description {
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.8;
+        }
+
+        .join-button {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.75rem 1.25rem;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #fff;
+            background: linear-gradient(90deg, #a78bfa 0%, #818cf8 100%);
+            border-radius: 999px;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(130,90,240,0.18);
+            transition: transform 150ms ease, box-shadow 150ms ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .join-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 34px rgba(130,90,240,0.24);
+        }
+
+        .join-button:focus {
+            outline: 3px solid rgba(167,139,250,0.25);
+            outline-offset: 4px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1.5rem;
+            animation: fadeIn 1.5s ease-out 0.5s both;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-link:hover {
+            color: #ffffff;
+            border-color: rgba(167, 139, 250, 0.6);
+            background: rgba(167, 139, 250, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .social-link svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 600px) {
+            .container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Video Background -->
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="media/as-foretold-website-background.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="hero">
+            <div class="logo-stack">
+                <img id="logo-img" src="media/Dark Mode Icon.svg" class="logo-mark" alt="As Foretold Labs logo"
+                    onerror="this.style.display='none';document.querySelector('.logo-fallback').style.display='flex'">
+            </div>
+
+            <!-- Fallback inline SVG (used if external SVGs are missing). -->
+            <div class="logo-fallback" style="display:none;align-items:center;justify-content:center;">
+                <svg class="logo-mark" viewBox="0 0 100 100" role="img" aria-label="As Foretold Labs logo" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="lg" x1="0" x2="1" y1="0" y2="1">
+                            <stop offset="0%" stop-color="#a78bfa"/>
+                            <stop offset="100%" stop-color="#818cf8"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="50" cy="50" r="42" fill="url(#lg)"/>
+                    <path d="M34 62 L50 36 L66 62 Z" fill="#ffffff" opacity="0.95"/>
+                </svg>
+            </div>
+            <h1 class="brand-name">As Foretold Labs</h1>
+            <p class="tagline">The Future is Being Written</p>
+            <p class="description">
+                We're crafting something extraordinary. Join our journey as we push the boundaries of what's possible
+                and redefine tomorrow.
+            </p>
+
+            <a class="join-button" href="https://as-foretold-research-labs.notion.site/2e59d2c38d22802bb278fbb79e1cc0be?pvs=105" target="_blank" rel="noopener noreferrer" aria-label="Join As Foretold Labs on Notion">Join</a>
+
+        </div>
+
+        <!-- Footer / Social Links -->
+        <footer class="footer">
+            <a href="https://github.com/As-Foretold-Research-Labs" class="social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg>
+            </a>
+        </footer>
+    </div>
+
+
+</body>
+
+</html>
