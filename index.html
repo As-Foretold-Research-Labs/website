@@ -231,8 +231,8 @@
 <body>
     <!-- Video Background -->
     <div class="video-background">
-        <video autoplay muted loop playsinline>
-            <source src="media/as-foretold-website-background.mp4" type="video/mp4">
+        <video id="bg-video" autoplay muted loop playsinline preload="auto" crossorigin="anonymous">
+            <source src="https://sgp.cloud.appwrite.io/v1/storage/buckets/marc-velasquez-career/files/as-foretold-web-bg/view?project=marc-velasquez-career&mode=admin" type="video/mp4">
         </video>
         <div class="video-overlay"></div>
     </div>
@@ -282,5 +282,22 @@
 
 
 </body>
+
+    <script>
+    // Try to play the background video programmatically and log any errors.
+    (function(){
+        const v = document.getElementById('bg-video');
+        if(!v) return;
+        // Some browsers block autoplay; try play() and report the reason if blocked.
+        v.play().then(()=>{
+            // playing
+        }).catch(err=>{
+            console.warn('Background video play() rejected:', err);
+            // If playback is blocked, fall back to a stronger overlay so text remains readable.
+            const overlay = document.querySelector('.video-overlay');
+            if(overlay) overlay.style.background = 'linear-gradient(135deg, rgba(10,10,30,0.95) 0%, rgba(10,10,30,0.95) 100%)';
+        });
+    })();
+    </script>
 
 </html>
