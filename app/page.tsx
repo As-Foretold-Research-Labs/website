@@ -39,8 +39,8 @@ export default function Home() {
           {/* Logo */}
           <div className="mb-10 md:mb-14 animate-fade-in animate-logo-float flex justify-center" style={{ opacity: 1 }}>
             <svg
-              width="104"
-              height="104"
+              width="128"
+              height="128"
               viewBox="0 0 104 104"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
