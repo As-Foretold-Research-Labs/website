@@ -11,7 +11,7 @@ const researchAreas = [
     description: "Developing robust environments for training autonomous agent behavior in complex, dynamic spaces.",
   },
   {
-    title: "OSINT Activities",
+    title: "Open Source Intelligence Activities",
     description: "Harnessing open-source data to uncover patterns, trends, and insights in an increasingly interconnected world.",
   },
   {
