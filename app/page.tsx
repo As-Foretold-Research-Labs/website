@@ -81,15 +81,17 @@ export default function Home() {
                 {/* Hairline separator */}
                 <div className="hairline w-full my-8" />
                 
-                <div className={`research-item py-6 ${area.isAI ? 'text-center' : ''}`}>
+                <div className={`research-item py-6`}>
                   {area.isAI ? (
-                    <div className="flex flex-col items-center gap-4 md:gap-5">
-                      <div className="ai-brand flex items-center gap-1 animate-fade-up" style={{ animationDelay: `${400 + index * 100}ms` }}>
-                        <span>A</span>
-                        <span className="dot" aria-hidden="true"></span>
-                        <span>I</span>
-                      </div>
-                      <p className="text-desc text-white/60 leading-relaxed animate-fade-up" style={{ animationDelay: `${500 + index * 100}ms` }}>
+                    <div>
+                      <h2 className="text-section text-white mb-3 md:mb-4 tracking-wider animate-fade-up flex items-center gap-2" style={{ animationDelay: `${400 + index * 100}ms` }}>
+                        <span className="ai-brand flex items-center gap-1">
+                          <span>A</span>
+                          <span className="dot" aria-hidden="true"></span>
+                          <span>I</span>
+                        </span>
+                      </h2>
+                      <p className="text-desc text-white/50 leading-relaxed animate-fade-up" style={{ animationDelay: `${500 + index * 100}ms` }}>
                         {area.description}
                       </p>
                     </div>
