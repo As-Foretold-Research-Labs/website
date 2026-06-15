@@ -84,12 +84,8 @@ export default function Home() {
                 <div className={`research-item py-6`}>
                   {area.isAI ? (
                     <div>
-                      <h2 className="text-section text-white mb-3 md:mb-4 tracking-wider animate-fade-up flex items-center gap-2" style={{ animationDelay: `${400 + index * 100}ms` }}>
-                        <span className="ai-brand flex items-center gap-1">
-                          <span>A</span>
-                          <span className="dot" aria-hidden="true"></span>
-                          <span>I</span>
-                        </span>
+                      <h2 className="text-section text-white mb-3 md:mb-4 tracking-wider animate-fade-up" style={{ animationDelay: `${400 + index * 100}ms` }}>
+                        AI
                       </h2>
                       <p className="text-desc text-white/50 leading-relaxed animate-fade-up" style={{ animationDelay: `${500 + index * 100}ms` }}>
                         {area.description}
