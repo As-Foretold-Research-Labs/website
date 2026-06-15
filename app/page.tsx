@@ -37,7 +37,7 @@ export default function Home() {
         <div className="w-full max-w-[720px] px-6 md:px-12 lg:px-16">
           
           {/* Logo */}
-          <div className="mb-10 md:mb-14 animate-fade-in animate-logo-float flex justify-center">
+          <div className="mb-10 md:mb-14 animate-fade-in animate-logo-float flex justify-center" style={{ opacity: 1 }}>
             <svg
               width="104"
               height="104"
@@ -45,9 +45,10 @@ export default function Home() {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
-              className="text-white drop-shadow-[0_0_40px_rgba(255,255,255,0.05)]"
+              className="drop-shadow-[0_0_40px_rgba(255,255,255,0.05)]"
+              style={{ color: 'white' }}
             >
-              <g stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+              <g stroke="white" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M26 60 L52 36 L78 60 L52 84 Z" />
                 <path d="M26 44 L52 20 L78 44" />
                 <path d="M26 44 L52 68 L78 44" />
