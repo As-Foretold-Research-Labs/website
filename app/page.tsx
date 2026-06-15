@@ -112,7 +112,7 @@ export default function Home() {
           {/* Footer */}
           <footer className="mt-16 md:mt-24 pt-12 border-t border-white/10 text-center animate-fade-up delay-10">
             <p className="text-sm text-white/40 tracking-wider">
-              © 2024 As Foretold Research Labs
+              © {new Date().getFullYear()} As Foretold Research Labs
             </p>
           </footer>
 
