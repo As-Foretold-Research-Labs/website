@@ -1,0 +1,19 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- As Foretold Labs - Wireframe Cube Logo -->
+  <!-- Primary version: White on transparent (for dark backgrounds) -->
+  <g stroke="white" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Back face (top diamond) -->
+    <path d="M128 296 L256 176 L384 296 L256 416 Z" />
+    <!-- Front face edges (bottom V shapes) -->
+    <path d="M128 224 L256 104 L384 224" />
+    <path d="M128 224 L256 344 L384 224" />
+    <!-- Vertical connecting edges -->
+    <path d="M128 296 L128 224" />
+    <path d="M256 176 L256 104" />
+    <path d="M256 416 L256 344" />
+    <path d="M384 296 L384 224" />
+    <!-- Central eye/planet -->
+    <circle cx="256" cy="256" r="75" />
+    <circle cx="256" cy="256" r="33" />
+  </g>
+</svg>
