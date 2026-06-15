@@ -85,7 +85,7 @@ export default function Home() {
                   {area.isAI ? (
                     <div>
                       <h2 className="text-section text-white mb-3 md:mb-4 tracking-wider animate-fade-up" style={{ animationDelay: `${400 + index * 100}ms` }}>
-                        AI
+                        Artificial Intelligence Research
                       </h2>
                       <p className="text-desc text-white/50 leading-relaxed animate-fade-up" style={{ animationDelay: `${500 + index * 100}ms` }}>
                         {area.description}
