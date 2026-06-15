@@ -79,9 +79,9 @@ export default function Home() {
             {researchAreas.map((area, index) => (
               <React.Fragment key={index}>
                 {/* Hairline separator */}
-                <div className="hairline w-full" />
+                <div className="hairline w-full my-8" />
                 
-                <div className={`research-item py-10 md:py-12 mb-6 ${area.isAI ? 'text-center' : ''}`}>
+                <div className={`research-item py-6 ${area.isAI ? 'text-center' : ''}`}>
                   {area.isAI ? (
                     <div className="flex flex-col items-center gap-4 md:gap-5">
                       <div className="ai-brand flex items-center gap-1 animate-fade-up" style={{ animationDelay: `${400 + index * 100}ms` }}>
@@ -108,7 +108,7 @@ export default function Home() {
             ))}
             
             {/* Final hairline */}
-            <div className="hairline w-full" />
+            <div className="hairline w-full my-8" />
           </div>
 
           {/* Footer */}
