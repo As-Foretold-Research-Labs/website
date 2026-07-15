@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 import Footer from "./components/Footer";
 
@@ -60,51 +59,50 @@ const researchAreas = [
 export default function Home() {
   return (
     <main className="min-h-screen">
-      {/* Hero */}
-      <section className="pt-24 pb-16 md:pt-32 md:pb-24">
-        <div className="mx-auto max-w-6xl px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-6">
-              As Foretold Labs
-            </h1>
-            <p className="text-xl md:text-2xl text-white/70 mb-4 leading-snug">
-              The Future is Being Written
-            </p>
-            <p className="text-base text-white/50 leading-relaxed max-w-2xl mb-8">
-              We build intelligent systems at the intersection of simulation, automation,
-              and human-computer interaction.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link
-                href="/#work"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white text-black text-sm font-semibold transition-opacity hover:opacity-90"
-              >
-                Products
-              </Link>
-              <Link
-                href="/#about"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-white/15 text-sm font-medium text-white/80 hover:bg-white/5 transition-colors"
-              >
-                Research
-              </Link>
+      {/* Hero - full width */}
+      <section className="relative w-full border-b border-white/[0.08]">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10 pt-24 pb-20 md:pt-32 md:pb-28">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+            <div className="lg:col-span-7">
+              <h1 className="text-[clamp(2.5rem,6vw,5.5rem)] font-bold leading-[0.95] tracking-tight mb-6">
+                As Foretold Labs
+              </h1>
+              <p className="text-[clamp(1rem,2vw,1.375rem)] text-white/70 mb-6 leading-snug">
+                The Future is Being Written
+              </p>
+              <p className="text-base text-white/50 leading-relaxed max-w-xl mb-10">
+                We build intelligent systems at the intersection of simulation, automation,
+                and human-computer interaction.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  href="/#work"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white text-black text-sm font-semibold transition-opacity hover:opacity-90"
+                >
+                  Products
+                </Link>
+                <Link
+                  href="/#about"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-white/15 text-sm font-medium text-white/80 hover:bg-white/5 transition-colors"
+                >
+                  Research
+                </Link>
+              </div>
+            </div>
+            <div className="lg:col-span-5 flex items-end">
+              <p className="text-sm text-white/40 leading-relaxed max-w-sm">
+                From governance automation to clinical training, we engineer systems that
+                bridge theoretical frameworks and real-world impact.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Products */}
-      <section id="work" className="py-16 border-t border-white/[0.06]">
-        <div className="mx-auto max-w-6xl px-6 lg:px-8">
-          <div className="mb-10 md:mb-14">
-            <span className="text-[11px] font-semibold tracking-[0.25em] text-white/40 uppercase block mb-3">
-              What We Build
-            </span>
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
-              Products in development
-            </h2>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2">
+      {/* Products - full width grid */}
+      <section id="work" className="w-full border-b border-white/[0.08]">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-16 md:py-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {products.map((product) => (
               <Link
                 key={product.href}
@@ -114,7 +112,7 @@ export default function Home() {
                 <p className="text-[11px] font-semibold tracking-[0.2em] text-white/40 uppercase mb-4">
                   {product.category}
                 </p>
-                <h3 className="text-3xl md:text-[2.25rem] font-semibold tracking-tight mb-4 text-white group-hover:text-white transition-colors">
+                <h3 className="text-3xl md:text-[2.25rem] font-semibold tracking-tight mb-4 text-white">
                   {product.title}
                 </h3>
                 <p className="text-base text-white/50 leading-relaxed mb-6">
@@ -142,9 +140,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="py-16 border-t border-white/[0.06]">
-        <div className="mx-auto max-w-6xl px-6 lg:px-8">
+      {/* Stats - horizontal band */}
+      <section className="w-full border-b border-white/[0.08] bg-white/[0.01]">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-12 md:py-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
             {stats.map((m) => (
               <div key={m.label} className="text-left">
@@ -160,10 +158,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Research */}
-      <section id="about" className="py-16 border-t border-white/[0.06]">
-        <div className="mx-auto max-w-6xl px-6 lg:px-8">
-          <div className="mb-10 md:mb-14">
+      {/* Research - full width list */}
+      <section id="about" className="w-full border-b border-white/[0.08]">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-16 md:py-24">
+          <div className="mb-12 md:mb-16">
             <span className="text-[11px] font-semibold tracking-[0.25em] text-white/40 uppercase block mb-3">
               Research
             </span>
@@ -172,32 +170,29 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid gap-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-0">
             {researchAreas.map((area, index) => (
-              <React.Fragment key={index}>
-                {index > 0 && <div className="h-px bg-white/[0.06]" />}
-                <div className="py-8 md:py-10">
-                  <h3 className="text-[11px] font-bold tracking-[0.2em] text-white/80 uppercase mb-3">
-                    {area.title}
-                  </h3>
-                  <p className="text-base text-white/45 leading-relaxed max-w-3xl">
-                    {area.description}
-                  </p>
-                </div>
-              </React.Fragment>
+              <div key={index} className="py-8 md:py-10 border-t border-white/[0.06]">
+                <h3 className="text-[11px] font-bold tracking-[0.2em] text-white/80 uppercase mb-3">
+                  {area.title}
+                </h3>
+                <p className="text-base text-white/45 leading-relaxed max-w-xl">
+                  {area.description}
+                </p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 md:py-24 border-t border-white/[0.06]">
-        <div className="mx-auto max-w-6xl px-6 lg:px-8">
-          <div className="max-w-2xl">
+      {/* CTA - full width accent band */}
+      <section className="relative w-full border-b border-white/[0.08]">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-16 md:py-24">
+          <div className="max-w-3xl">
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">
               Want to work together?
             </h2>
-            <p className="text-base text-white/50 leading-relaxed mb-8">
+            <p className="text-base text-white/50 leading-relaxed mb-8 max-w-xl">
               Whether it is compliance automation, clinical training, or research
               collaboration — we are open to conversations that matter.
             </p>
