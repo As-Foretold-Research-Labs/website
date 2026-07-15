@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Footer from "./components/Footer";
 
 const products = [
   {
@@ -58,156 +57,202 @@ const researchAreas = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      {/* Hero - full width */}
-      <section className="relative w-full border-b border-white/[0.08]">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 pt-24 pb-20 md:pt-32 md:pb-28">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
-            <div className="lg:col-span-7">
-              <h1 className="text-[clamp(2.5rem,6vw,5.5rem)] font-bold leading-[0.95] tracking-tight mb-6">
-                As Foretold Labs
-              </h1>
-              <p className="text-[clamp(1rem,2vw,1.375rem)] text-white/70 mb-6 leading-snug">
-                The Future is Being Written
-              </p>
-              <p className="text-base text-white/50 leading-relaxed max-w-xl mb-10">
-                We build intelligent systems at the intersection of simulation, automation,
-                and human-computer interaction.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <Link
-                  href="/#work"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white text-black text-sm font-semibold transition-opacity hover:opacity-90"
-                >
-                  Products
-                </Link>
-                <Link
-                  href="/#about"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-white/15 text-sm font-medium text-white/80 hover:bg-white/5 transition-colors"
-                >
-                  Research
-                </Link>
-              </div>
+    <>
+      <section className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 py-36 md:py-48">
+        <div className="grid gap-20 lg:grid-cols-[1.15fr_0.85fr] lg:gap-24">
+          <div className="shell-panel p-16 md:p-20 xl:p-24">
+            <span className="section-kicker">Command Center</span>
+            <h1 className="section-heading mt-6 max-w-4xl">As Foretold Labs</h1>
+            <p className="mt-8 max-w-2xl text-xl md:text-2xl text-[var(--accent-2)] leading-snug">
+              The Future is Being Written.
+            </p>
+            <p className="mt-8 max-w-2xl text-lg md:text-xl section-copy">
+              We build intelligent systems at the intersection of simulation, automation,
+              and human-computer interaction.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link
+                href="/#work"
+                className="command-chip border-transparent bg-[var(--accent)] text-[#04070e] hover:opacity-90"
+              >
+                Products
+              </Link>
+              <Link
+                href="/#about"
+                className="command-chip hover:border-white/20 hover:bg-white/[0.05] hover:text-white"
+              >
+                Research
+              </Link>
             </div>
-            <div className="lg:col-span-5 flex items-end">
-              <p className="text-sm text-white/40 leading-relaxed max-w-sm">
-                From governance automation to clinical training, we engineer systems that
-                bridge theoretical frameworks and real-world impact.
-              </p>
+          </div>
+
+          <div className="terminal-window">
+            <div className="terminal-bar">
+              <span className="terminal-dot" />
+              <span className="terminal-dot" />
+              <span className="terminal-dot" />
+              <span className="ml-3 mono-text text-[11px] tracking-[0.24em] text-white/40 uppercase">
+                live system summary
+              </span>
+            </div>
+            <div className="grid gap-10 p-14 md:p-16">
+              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-10">
+                <p className="mono-text text-[11px] uppercase tracking-[0.24em] text-white/40">status</p>
+                <p className="mt-4 text-xl text-white/85">Research studio online</p>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {stats.map((item) => (
+                  <div key={item.label} className="metric-card">
+                    <p className="text-2xl font-semibold tracking-tight text-white">{item.value}</p>
+                    <p className="mt-2 text-[11px] uppercase tracking-[0.24em] text-white/40">
+                      {item.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-black/20 p-10 md:p-12">
+                <p className="mono-text text-[11px] uppercase tracking-[0.24em] text-white/35">mission</p>
+                <p className="mt-4 text-base md:text-lg text-white/60 leading-relaxed">
+                  Build systems that feel precise, explainable, and operationally real. Every public page
+                  is structured like an interface, not a brochure.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Products - full width grid */}
-      <section id="work" className="w-full border-b border-white/[0.08]">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-16 md:py-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {products.map((product) => (
-              <Link
-                key={product.href}
-                href={product.href}
-                className="group block p-8 md:p-10 rounded-xl border border-white/[0.08] bg-white/[0.02] transition-all duration-300 hover:border-white/20 hover:bg-white/[0.04]"
-              >
-                <p className="text-[11px] font-semibold tracking-[0.2em] text-white/40 uppercase mb-4">
-                  {product.category}
-                </p>
-                <h3 className="text-3xl md:text-[2.25rem] font-semibold tracking-tight mb-4 text-white">
+      <section id="work" className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 py-36 md:py-48">
+        <div className="mb-20 md:mb-24 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+          <div>
+            <span className="section-kicker">Workload</span>
+            <h2 className="section-heading mt-5 text-5xl md:text-6xl">Products in focus</h2>
+          </div>
+          <p className="max-w-xl text-base md:text-lg section-copy">
+            Two active product surfaces, both framed as modern operational tools rather than marketing pages.
+          </p>
+        </div>
+
+        <div className="grid gap-14 md:grid-cols-2">
+          {products.map((product) => (
+            <Link
+              key={product.href}
+              href={product.href}
+              className="shell-panel group flex h-full flex-col justify-between p-14 md:p-16 transition-transform duration-300 hover:-translate-y-1"
+            >
+              <div>
+                <div className="flex items-center justify-between gap-4">
+                  <p className="mono-text text-[11px] uppercase tracking-[0.24em] text-white/42">
+                    {product.category}
+                  </p>
+                  <span className="text-white/28 transition-transform duration-300 group-hover:translate-x-1">
+                    ↗
+                  </span>
+                </div>
+                <h3 className="mt-5 text-4xl md:text-[2.75rem] font-semibold tracking-[-0.04em] text-white">
                   {product.title}
                 </h3>
-                <p className="text-base text-white/50 leading-relaxed mb-6">
+                <p className="mt-5 max-w-xl text-base md:text-lg text-white/58 leading-relaxed">
                   {product.description}
                 </p>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {product.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] text-[11px] font-medium text-white/60"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <span className="inline-flex items-center gap-2 text-[13px] font-semibold text-white group-hover:text-white transition-colors">
-                  View product details
-                  <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">
-                    →
+              </div>
+
+              <div className="mt-16 flex flex-wrap gap-3">
+                {product.tags.map((tag) => (
+                  <span key={tag} className="command-chip text-white/66">
+                    {tag}
                   </span>
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Stats - horizontal band */}
-      <section className="w-full border-b border-white/[0.08] bg-white/[0.01]">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-12 md:py-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-            {stats.map((m) => (
-              <div key={m.label} className="text-left">
-                <div className="text-3xl md:text-4xl font-bold text-white mb-2 tracking-tight">
-                  {m.value}
-                </div>
-                <div className="text-[11px] font-medium tracking-wide text-white/40 uppercase">
-                  {m.label}
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Research - full width list */}
-      <section id="about" className="w-full border-b border-white/[0.08]">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-16 md:py-24">
-          <div className="mb-12 md:mb-16">
-            <span className="text-[11px] font-semibold tracking-[0.25em] text-white/40 uppercase block mb-3">
-              Research
-            </span>
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
-              Areas of exploration
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-0">
-            {researchAreas.map((area, index) => (
-              <div key={index} className="py-8 md:py-10 border-t border-white/[0.06]">
-                <h3 className="text-[11px] font-bold tracking-[0.2em] text-white/80 uppercase mb-3">
-                  {area.title}
-                </h3>
-                <p className="text-base text-white/45 leading-relaxed max-w-xl">
-                  {area.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA - full width accent band */}
-      <section className="relative w-full border-b border-white/[0.08]">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-16 md:py-24">
-          <div className="max-w-3xl">
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">
-              Want to work together?
-            </h2>
-            <p className="text-base text-white/50 leading-relaxed mb-8 max-w-xl">
-              Whether it is compliance automation, clinical training, or research
-              collaboration — we are open to conversations that matter.
-            </p>
-            <Link
-              href="mailto:hello@asforetolabs.com"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white text-black text-sm font-semibold transition-opacity hover:opacity-90"
-            >
-              Get in touch
-              <span className="text-lg leading-none">→</span>
             </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 py-36 md:py-48">
+        <div className="shell-panel p-16 md:p-20">
+          <div className="grid gap-12 sm:grid-cols-2 xl:grid-cols-4">
+            {stats.map((item) => (
+              <div key={item.label} className="metric-card">
+                <p className="text-4xl md:text-5xl font-semibold tracking-tight text-white">{item.value}</p>
+                <p className="mt-3 text-[11px] uppercase tracking-[0.24em] text-white/40">{item.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <Footer />
-    </main>
+      <section id="about" className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 py-36 md:py-48">
+        <div className="mb-20 md:mb-24">
+          <span className="section-kicker">Research</span>
+          <h2 className="section-heading mt-5 text-5xl md:text-6xl">Areas of exploration</h2>
+        </div>
+
+        <div className="grid gap-14 md:grid-cols-2 xl:grid-cols-3">
+          {researchAreas.map((area, index) => (
+            <div
+              key={area.title}
+              className={`shell-panel p-14 md:p-16 ${area.isAI ? "border-[var(--accent)]/40" : ""}`}
+            >
+              <div className="flex items-center justify-between gap-4">
+                <span className="mono-text text-[11px] uppercase tracking-[0.24em] text-white/38">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                {area.isAI ? (
+                  <span className="command-chip border-[var(--accent)]/40 bg-[var(--accent-subtle)] text-white/80">
+                    priority
+                  </span>
+                ) : null}
+              </div>
+              <h3 className="mt-6 text-3xl font-semibold tracking-[-0.03em] text-white">
+                {area.title}
+              </h3>
+              <p className="mt-5 text-base md:text-lg text-white/56 leading-relaxed">
+                {area.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 py-36 md:py-48">
+        <div className="terminal-window">
+          <div className="terminal-bar">
+            <span className="terminal-dot" />
+            <span className="terminal-dot" />
+            <span className="terminal-dot" />
+            <span className="ml-3 mono-text text-[11px] tracking-[0.24em] text-white/40 uppercase">
+              contact / prompt
+            </span>
+          </div>
+          <div className="grid gap-16 p-16 md:p-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+            <div>
+              <span className="section-kicker">Signal</span>
+              <h2 className="section-heading mt-5 text-5xl md:text-6xl">Want to work together?</h2>
+              <p className="mt-14 max-w-xl text-lg md:text-xl section-copy leading-relaxed">
+                Whether it is compliance automation, clinical training, or research collaboration, the work is
+                framed as an operating system for serious product thinking.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap lg:justify-end">
+              <Link
+                href="mailto:hello@asforetolabs.com"
+                className="command-chip border-transparent bg-[var(--accent)] text-[#04070e] hover:opacity-90"
+              >
+                Get in touch
+                <span className="text-lg leading-none">→</span>
+              </Link>
+              <Link
+                href="/#work"
+                className="command-chip hover:border-white/20 hover:bg-white/[0.05] hover:text-white"
+              >
+                View products
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
