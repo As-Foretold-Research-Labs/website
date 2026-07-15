@@ -59,18 +59,18 @@ export default function Home() {
   return (
     <>
       <section className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 py-36 md:py-48">
-        <div className="grid gap-20 lg:grid-cols-[1.15fr_0.85fr] lg:gap-24">
+        <div className="grid gap-24 lg:grid-cols-[1.15fr_0.85fr] lg:gap-28">
           <div className="shell-panel p-16 md:p-20 xl:p-24">
             <span className="section-kicker">Command Center</span>
-            <h1 className="section-heading mt-6 max-w-4xl">As Foretold Labs</h1>
-            <p className="mt-8 max-w-2xl text-xl md:text-2xl text-[var(--accent-2)] leading-snug">
+            <h1 className="section-heading mt-8 max-w-4xl">As Foretold Labs</h1>
+            <p className="mt-10 max-w-2xl text-xl md:text-2xl text-[var(--accent-2)] leading-snug">
               The Future is Being Written.
             </p>
-            <p className="mt-8 max-w-2xl text-lg md:text-xl section-copy">
+            <p className="mt-10 max-w-2xl text-lg md:text-xl section-copy">
               We build intelligent systems at the intersection of simulation, automation,
               and human-computer interaction.
             </p>
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-12 flex flex-wrap gap-4">
               <Link
                 href="/#work"
                 className="command-chip border-transparent bg-[var(--accent)] text-[#04070e] hover:opacity-90"
@@ -123,17 +123,17 @@ export default function Home() {
       </section>
 
       <section id="work" className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 py-36 md:py-48">
-        <div className="mb-20 md:mb-24 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+        <div className="mb-24 md:mb-28 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <span className="section-kicker">Workload</span>
-            <h2 className="section-heading mt-5 text-5xl md:text-6xl">Products in focus</h2>
+            <h2 className="section-heading mt-6 text-5xl md:text-6xl">Products in focus</h2>
           </div>
           <p className="max-w-xl text-base md:text-lg section-copy">
             Two active product surfaces, both framed as modern operational tools rather than marketing pages.
           </p>
         </div>
 
-        <div className="grid gap-14 md:grid-cols-2">
+        <div className="grid gap-16 md:grid-cols-2">
           {products.map((product) => (
             <Link
               key={product.href}
@@ -149,15 +149,15 @@ export default function Home() {
                     ↗
                   </span>
                 </div>
-                <h3 className="mt-5 text-4xl md:text-[2.75rem] font-semibold tracking-[-0.04em] text-white">
+                <h3 className="mt-6 text-4xl md:text-[2.75rem] font-semibold tracking-[-0.04em] text-white">
                   {product.title}
                 </h3>
-                <p className="mt-5 max-w-xl text-base md:text-lg text-white/58 leading-relaxed">
+                <p className="mt-6 max-w-xl text-base md:text-lg text-white/58 leading-relaxed">
                   {product.description}
                 </p>
               </div>
 
-              <div className="mt-16 flex flex-wrap gap-3">
+              <div className="mt-20 flex flex-wrap gap-3">
                 {product.tags.map((tag) => (
                   <span key={tag} className="command-chip text-white/66">
                     {tag}
@@ -183,12 +183,12 @@ export default function Home() {
       </section>
 
       <section id="about" className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 py-36 md:py-48">
-        <div className="mb-20 md:mb-24">
+        <div className="mb-24 md:mb-28">
           <span className="section-kicker">Research</span>
-          <h2 className="section-heading mt-5 text-5xl md:text-6xl">Areas of exploration</h2>
+          <h2 className="section-heading mt-6 text-5xl md:text-6xl">Areas of exploration</h2>
         </div>
 
-        <div className="grid gap-14 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-16 md:grid-cols-2 xl:grid-cols-3">
           {researchAreas.map((area, index) => (
             <div
               key={area.title}
@@ -228,8 +228,8 @@ export default function Home() {
           <div className="grid gap-16 p-16 md:p-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
               <span className="section-kicker">Signal</span>
-              <h2 className="section-heading mt-5 text-5xl md:text-6xl">Want to work together?</h2>
-              <p className="mt-14 max-w-xl text-lg md:text-xl section-copy leading-relaxed">
+              <h2 className="section-heading mt-6 text-5xl md:text-6xl">Want to work together?</h2>
+              <p className="mt-16 max-w-xl text-lg md:text-xl section-copy leading-relaxed">
                 Whether it is compliance automation, clinical training, or research collaboration, the work is
                 framed as an operating system for serious product thinking.
               </p>

@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="mt-24 md:mt-32 pb-8">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <footer className="mt-28 md:mt-36 pb-10">
+      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <div className="terminal-window">
           <div className="terminal-bar">
             <span className="terminal-dot" />
@@ -14,11 +14,11 @@ export default function Footer() {
             </span>
           </div>
 
-          <div className="grid gap-8 p-6 md:p-8 lg:grid-cols-[1.2fr_0.8fr] lg:gap-12">
-            <div className="flex flex-col gap-4">
+          <div className="grid gap-10 p-8 md:p-10 lg:grid-cols-[1.2fr_0.8fr] lg:gap-14">
+            <div className="flex flex-col gap-5">
               <div>
                 <p className="section-kicker">As Foretold Labs</p>
-                <p className="mt-3 max-w-xl text-sm md:text-base text-white/52 leading-relaxed">
+                <p className="mt-4 max-w-xl text-base md:text-lg text-white/52 leading-relaxed">
                   Research systems for governance automation, simulation, and human-computer interaction.
                   The public site is intentionally spare, with each product page framed like a terminal session.
                 </p>

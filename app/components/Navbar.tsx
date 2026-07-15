@@ -22,13 +22,13 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed inset-x-0 top-0 z-50 px-4 sm:px-6 lg:px-8 pt-3">
+    <nav className="fixed inset-x-0 top-0 z-50 px-6 sm:px-8 lg:px-10 pt-6">
       <div
         className={`mx-auto max-w-7xl rounded-[22px] border border-[var(--line)] bg-[var(--bg-glass)] backdrop-blur-xl shadow-[0_18px_50px_rgba(0,0,0,0.28)] transition-all duration-300 ${
           scrolled ? "bg-[var(--bg-glass-strong)]" : ""
         }`}
       >
-        <div className="flex items-center justify-between gap-4 px-4 py-3 md:px-5">
+        <div className="flex items-center justify-between gap-4 px-5 py-3 md:px-6">
           <Link href="/" className="flex items-center gap-3">
             <span className="h-2.5 w-2.5 rounded-full bg-[var(--accent)] shadow-[0_0_20px_var(--accent)]" />
             <div className="flex flex-col leading-none">

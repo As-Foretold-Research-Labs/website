@@ -55,14 +55,14 @@ const milestones = [
 export default function AugurPage() {
   return (
     <div data-theme="augur" className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 py-40 md:py-56">
-      <section className="grid gap-18 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
-        <div className="shell-panel p-16 md:p-20 xl:p-20">
+      <section className="grid gap-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
+        <div className="shell-panel p-16 md:p-20 xl:p-24">
           <span className="section-kicker">Portfolio Product / Compliance Automation</span>
           <h1 className="section-heading mt-16 max-w-3xl">Augur</h1>
-          <p className="mt-16 max-w-2xl text-lg md:text-xl text-[var(--accent-2)] leading-snug">
+          <p className="mt-16 max-w-2xl text-xl md:text-2xl text-[var(--accent-2)] leading-snug">
             Compliance automation that actually thinks.
           </p>
-          <p className="mt-16 max-w-2xl text-lg md:text-xl section-copy leading-relaxed">
+          <p className="mt-16 max-w-2xl text-xl md:text-2xl section-copy leading-relaxed">
             Augur is an AI-assisted governance platform that tracks security controls, ingests evidence,
             and maps findings onto SOC 2 and ISO 27001 requirements so teams can ship faster without
             drowning in audit prep.
@@ -85,24 +85,24 @@ export default function AugurPage() {
               augur / control surface
             </span>
           </div>
-          <div className="grid gap-16 p-14 md:p-16">
+          <div className="grid gap-12 p-14 md:p-16">
             <div className="metric-card">
               <p className="mono-text text-[11px] uppercase tracking-[0.24em] text-white/40">status</p>
-              <p className="mt-3 text-lg text-white/85">Audit workflow mapped</p>
+              <p className="mt-4 text-xl text-white/85">Audit workflow mapped</p>
             </div>
-            <div className="grid gap-6 sm:grid-cols-2">
+            <div className="grid gap-4 sm:grid-cols-2">
               <div className="metric-card">
                 <p className="text-2xl font-semibold text-white">7</p>
-                <p className="mt-2 text-[11px] uppercase tracking-[0.24em] text-white/40">milestones</p>
+                <p className="mt-3 text-[11px] uppercase tracking-[0.24em] text-white/40">milestones</p>
               </div>
               <div className="metric-card">
                 <p className="text-2xl font-semibold text-white">SOC 2</p>
-                <p className="mt-2 text-[11px] uppercase tracking-[0.24em] text-white/40">framework</p>
+                <p className="mt-3 text-[11px] uppercase tracking-[0.24em] text-white/40">framework</p>
               </div>
             </div>
             <div className="rounded-2xl border border-white/10 bg-black/20 p-10 md:p-12">
               <p className="mono-text text-[11px] uppercase tracking-[0.24em] text-white/35">note</p>
-              <p className="mt-3 text-base md:text-lg text-white/58 leading-relaxed">
+              <p className="mt-4 text-base md:text-lg text-white/58 leading-relaxed">
                 Every interface decision is built to feel operational, not decorative.
               </p>
             </div>
@@ -110,13 +110,13 @@ export default function AugurPage() {
         </div>
       </section>
 
-      <section className="mt-40 md:mt-56 shell-panel p-14 md:p-16">
+      <section className="mt-44 md:mt-56 shell-panel p-16 md:p-20">
         <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div>
             <span className="section-kicker">Why it exists</span>
             <h2 className="section-heading mt-16 text-4xl md:text-5xl">Built because audit prep is broken</h2>
           </div>
-          <p className="text-lg md:text-xl section-copy leading-relaxed">
+          <p className="text-xl md:text-2xl section-copy leading-relaxed">
             Compliance teams spend up to 40% of their time collecting, organizing, and mapping evidence to
             control frameworks. Augur automates the low-value work: reading policy documents, parsing security
             tool exports, and producing auditable control mappings with risk summaries so the team can focus
@@ -125,7 +125,7 @@ export default function AugurPage() {
         </div>
       </section>
 
-      <section className="mt-32 md:mt-160">
+      <section className="mt-44 md:mt-56">
         <div className="mb-20 md:mb-24">
           <span className="section-kicker">Core Features</span>
           <h2 className="section-heading mt-16 text-4xl md:text-5xl">What it does</h2>
@@ -136,13 +136,13 @@ export default function AugurPage() {
               <h3 className="mono-text text-[11px] font-bold tracking-[0.24em] text-[var(--accent-1)] uppercase mb-4">
                 {feature.title}
               </h3>
-              <p className="text-base md:text-lg text-white/56 leading-relaxed">{feature.desc}</p>
+              <p className="text-lg md:text-xl text-white/56 leading-relaxed">{feature.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="mt-40 md:mt-56 terminal-window">
+      <section className="mt-44 md:mt-56 terminal-window">
         <div className="terminal-bar">
           <span className="terminal-dot" />
           <span className="terminal-dot" />
@@ -153,8 +153,8 @@ export default function AugurPage() {
         </div>
         <div className="p-14 md:p-16">
           <span className="section-kicker">Architecture</span>
-          <h2 className="section-heading mt-16 mb-6 text-4xl md:text-5xl">Clean applied onion</h2>
-          <div className="rounded-[20px] border border-white/10 bg-black/20 p-5 md:p-7 font-mono text-[11px] md:text-[13px] text-white/55 leading-relaxed overflow-x-auto">
+          <h2 className="section-heading mt-16 mb-8 text-4xl md:text-5xl">Clean applied onion</h2>
+          <div className="rounded-[20px] border border-white/10 bg-black/20 p-6 md:p-8 font-mono text-[11px] md:text-[13px] text-white/55 leading-relaxed overflow-x-auto">
             <pre>{`
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │  Augur.Web (Blazor)  ·  Augur.ComponentLib  ·  GrcBase Shared Components   │  Presentation
@@ -185,24 +185,24 @@ export default function AugurPage() {
         </div>
       </section>
 
-      <section className="mt-32 md:mt-160">
+      <section className="mt-44 md:mt-56">
         <div className="mb-20 md:mb-24">
           <span className="section-kicker">Milestones</span>
           <h2 className="section-heading mt-16 text-4xl md:text-5xl">Build trace</h2>
         </div>
-        <div className="grid gap-16 md:grid-cols-2">
+        <div className="grid gap-12 md:grid-cols-2">
           {milestones.map(([label, text]) => (
-            <div key={label} className="shell-panel flex items-start gap-8 p-10 md:p-11">
+            <div key={label} className="shell-panel flex items-start gap-6 p-10 md:p-11">
               <span className="mono-text text-[11px] md:text-xs font-bold tracking-[0.24em] text-[var(--accent-1)] whitespace-nowrap">
                 {label}
               </span>
-              <p className="text-base md:text-lg text-white/55 leading-relaxed">{text}</p>
+              <p className="text-lg md:text-xl text-white/55 leading-relaxed">{text}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="mt-32 md:mt-160">
+      <section className="mt-44 md:mt-56">
         <div className="mb-20 md:mb-24">
           <span className="section-kicker">Demo</span>
           <h2 className="section-heading mt-16 text-4xl md:text-5xl">Product walkthrough</h2>
@@ -216,7 +216,7 @@ export default function AugurPage() {
               augur / dashboard / evidence / agent
             </span>
           </div>
-          <div className="p-2 md:p-4">
+          <div className="p-3 md:p-5">
             <Image
               src="/augur-demo.gif"
               alt="Augur product demo"
@@ -229,12 +229,12 @@ export default function AugurPage() {
         </div>
       </section>
 
-      <section className="mt-40 md:mt-56 shell-panel p-14 md:p-16">
-        <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+      <section className="mt-44 md:mt-56 shell-panel p-16 md:p-20">
+        <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <span className="section-kicker">Signal</span>
             <h2 className="section-heading mt-16 text-4xl md:text-5xl">Want to discuss Augur?</h2>
-            <p className="mt-16 max-w-2xl text-lg md:text-xl section-copy leading-relaxed">
+            <p className="mt-16 max-w-2xl text-xl md:text-2xl section-copy leading-relaxed">
               This is an active portfolio project. I can walk through the architecture, agent design decisions,
               or failure-mode choices in detail.
             </p>

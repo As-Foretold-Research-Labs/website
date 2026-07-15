@@ -33,7 +33,7 @@ export default function RootLayout({
     <html lang="en" className={`${spaceGrotesk.variable} ${ibmPlexMono.variable} antialiased`}>
       <body className="min-h-screen flex flex-col bg-[var(--bg)] text-[var(--fg)]">
         <Navbar />
-        <main className="flex-1 pt-52 md:pt-64">{children}</main>
+        <main className="flex-1 pt-40 md:pt-48">{children}</main>
         <Footer />
       </body>
     </html>
