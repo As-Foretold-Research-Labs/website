@@ -213,6 +213,7 @@ export default function AugurPage() {
                 alt="Augur product demo"
                 width={1280}
                 height={720}
+                unoptimized
                 className="w-full h-auto rounded-lg"
               />
             </div>
