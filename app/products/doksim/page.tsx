@@ -232,6 +232,7 @@ export default function DokSimPage() {
                 alt="DokSim simulation dashboard"
                 width={1280}
                 height={720}
+                loading="eager"
                 className="w-full h-auto rounded-lg"
               />
             </div>
