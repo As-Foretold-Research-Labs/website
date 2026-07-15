@@ -4,10 +4,42 @@
 
 :root {
   --bg: #050508;
-  --fg: #ffffff;
+  --fg: #f4f4f6;
   --muted: #888888;
   --line: #1a1a2e;
   --line-strong: #2a2a3e;
+  --accent-1: rgba(255,255,255,1);
+  --accent-2: rgba(255,255,255,0.5);
+  --card-border: rgba(255,255,255,0.06);
+  --card-bg: rgba(255,255,255,0.02);
+  --card-hover-border: rgba(255,255,255,0.12);
+  --card-hover-bg: rgba(255,255,255,0.04);
+  --section-heading: white;
+  --kicker: rgba(255,255,255,0.35);
+}
+
+[data-theme="augur"] {
+  --accent-1: #8fb7ff;
+  --accent-2: rgba(143,183,255,0.55);
+  --card-border: rgba(143,183,255,0.10);
+  --card-bg: rgba(143,183,255,0.03);
+  --card-hover-border: rgba(143,183,255,0.22);
+  --card-hover-bg: rgba(143,183,255,0.06);
+  --bg: #04070e;
+  --kicker: rgba(143,183,255,0.55);
+  --section-heading: #dde9ff;
+}
+
+[data-theme="doksim"] {
+  --accent-1: #7aecd5;
+  --accent-2: rgba(122,236,213,0.55);
+  --card-border: rgba(122,236,213,0.10);
+  --card-bg: rgba(122,236,213,0.03);
+  --card-hover-border: rgba(122,236,213,0.22);
+  --card-hover-bg: rgba(122,236,213,0.06);
+  --bg: #040c0a;
+  --kicker: rgba(122,236,213,0.55);
+  --section-heading: #d4f5eb;
 }
 
 * {
