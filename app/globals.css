@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
   --bg: #07060a;
@@ -100,7 +98,7 @@ body::before {
     linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 64px 64px;
   opacity: 0.18;
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.18) 50%, rgba(0, 0, 0, 0.7));
+  mask-image: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.18) 50%, rgba(0,0,0,0.7));
 }
 
 body::after {
@@ -108,7 +106,7 @@ body::after {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(circle at center, transparent 35%, rgba(0, 0, 0, 0.18) 100%);
+  background: radial-gradient(circle at center, transparent 35%, rgba(0,0,0,0.18) 100%);
 }
 
 a {
