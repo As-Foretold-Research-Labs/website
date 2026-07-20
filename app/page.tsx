@@ -4,6 +4,7 @@ const products = [
   {
     title: "Augur",
     category: "Governance Automation",
+    index: "01",
     href: "/products/augur",
     description:
       "AI-assisted compliance automation mapping security findings onto SOC 2 and ISO 27001 controls.",
@@ -12,6 +13,7 @@ const products = [
   {
     title: "DokSim",
     category: "Clinical Training Simulation",
+    index: "02",
     href: "/products/doksim",
     description:
       "LangGraph + LangChain patient-communication simulator with LLM-as-judge evaluation and red-line safe-branch handling.",
@@ -57,82 +59,96 @@ const researchAreas = [
 
 export default function Home() {
   return (
-    <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+    <div className="w-full px-6 sm:px-10 md:px-16 lg:px-24 xl:px-28">
       {/* Hero */}
-      <section className="flex min-h-[92vh] flex-col justify-center py-44 md:py-56">
-        <span className="section-kicker mb-10">Command Center</span>
-        <h1 className="section-heading max-w-4xl">As Foretold Labs</h1>
-        <p className="mt-12 max-w-2xl text-xl text-[var(--accent-2)] md:text-2xl">
-          The Future is Being Written.
-        </p>
-        <p className="section-copy mt-10 max-w-2xl text-lg leading-relaxed md:text-xl">
+      <section className="flex min-h-[92vh] flex-col justify-center py-40 md:py-56">
+        <span className="eyebrow mb-10">// The Future is Being Written</span>
+        <h1 className="display max-w-5xl text-[clamp(3rem,11vw,9rem)]">
+          As Foretold
+          <br />
+          Labs
+        </h1>
+        <p className="mt-12 max-w-2xl body-copy text-lg md:text-xl">
           We build intelligent systems at the intersection of simulation, automation, and
           human-computer interaction.
         </p>
         <div className="mt-16 flex flex-wrap gap-4">
-          <Link
-            href="/#work"
-            className="command-chip border-transparent bg-[var(--accent)] text-[#06070b] hover:opacity-90"
-          >
-            View products
+          <Link href="/#work" className="chip chip--solid">
+            View products →
           </Link>
-          <Link
-            href="/#research"
-            className="command-chip hover:border-white/20 hover:bg-white/[0.05] hover:text-white"
-          >
+          <Link href="/#research" className="chip">
             Research areas
           </Link>
         </div>
       </section>
 
-      {/* Stats strip */}
-      <section className="my-20 md:my-28">
-        <div className="shell-panel grid grid-cols-2 gap-px overflow-hidden md:grid-cols-4">
-          {stats.map((s) => (
-            <div key={s.label} className="metric-card">
-              <p className="text-2xl font-semibold text-white">{s.value}</p>
-              <p className="mt-3 text-[11px] uppercase tracking-[0.24em] text-white/40">
-                {s.label}
-              </p>
+      {/* Marquee band */}
+      <section className="overflow-hidden border-y border-[var(--line-soft)] py-8">
+        <div className="marquee gap-16">
+          {[0, 1].map((dup) => (
+            <div key={dup} className="flex shrink-0 items-center gap-16 pr-16" aria-hidden={dup === 1}>
+              <span className="display whitespace-nowrap text-2xl text-white/15 md:text-4xl">
+                Simulation
+              </span>
+              <span className="display whitespace-nowrap text-2xl text-white/15 md:text-4xl">
+                Automation
+              </span>
+              <span className="display whitespace-nowrap text-2xl text-[var(--accent)] md:text-4xl">
+                Human-Computer Interaction
+              </span>
+              <span className="display whitespace-nowrap text-2xl text-white/15 md:text-4xl">
+                Research Systems
+              </span>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Work */}
+      {/* Stats strip */}
+      <section className="grid grid-cols-2 gap-px border-b border-[var(--line-soft)] bg-[var(--line-soft)] md:grid-cols-4">
+        {stats.map((s) => (
+          <div key={s.label} className="bg-black p-10 md:p-14">
+            <p className="display text-3xl text-white md:text-4xl">{s.value}</p>
+            <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.24em] text-white/40">
+              {s.label}
+            </p>
+          </div>
+        ))}
+      </section>
+
+      {/* Work — asymmetric staggered */}
       <section id="work" className="py-40 md:py-56">
         <div className="mb-28 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
-            <span className="section-kicker">Workload</span>
-            <h2 className="section-heading mt-6 text-5xl md:text-6xl">Products in focus</h2>
+            <span className="eyebrow">// Workload</span>
+            <h2 className="display mt-6 text-5xl md:text-7xl">Products in focus</h2>
           </div>
-          <p className="section-copy max-w-md text-base leading-relaxed md:text-lg">
+          <p className="body-copy max-w-md text-base md:text-lg">
             Two active product surfaces, both framed as modern operational tools rather than
             marketing pages.
           </p>
         </div>
 
-        <div className="grid gap-20 md:grid-cols-2">
-          {products.map((p) => (
+        <div className="flex flex-col gap-20">
+          {products.map((p, i) => (
             <Link
               key={p.href}
               href={p.href}
-              className="shell-panel group flex flex-col justify-between p-16 transition-transform duration-300 hover:-translate-y-1 md:p-20"
+              className={`panel group flex flex-col justify-between p-10 transition-transform duration-300 hover:-translate-y-1 md:p-16 ${
+                i % 2 === 1 ? "md:ml-auto md:w-[82%]" : "md:w-[82%]"
+              }`}
             >
-              <div>
-                <p className="mono-text text-[11px] uppercase tracking-[0.24em] text-white/42">
+              <div className="flex items-start justify-between">
+                <span className="index-label">{p.index}</span>
+                <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-white/40">
                   {p.category}
-                </p>
-                <h3 className="mt-6 text-4xl font-semibold tracking-[-0.04em] text-white md:text-[2.75rem]">
-                  {p.title}
-                </h3>
-                <p className="section-copy mt-6 max-w-md text-base leading-relaxed md:text-lg">
-                  {p.description}
-                </p>
+                </span>
               </div>
-              <div className="mt-20 flex flex-wrap gap-3">
+              <h3 className="display mt-10 text-5xl text-white md:text-8xl">{p.title}</h3>
+              <p className="body-copy mt-8 max-w-xl text-base md:text-lg">{p.description}</p>
+              <div className="mt-12 flex flex-wrap gap-3">
                 {p.tags.map((t) => (
-                  <span key={t} className="command-chip text-white/66">
+                  <span key={t} className="chip">
                     {t}
                   </span>
                 ))}
@@ -145,34 +161,28 @@ export default function Home() {
       {/* Research */}
       <section id="research" className="py-40 md:py-56">
         <div className="mb-28">
-          <span className="section-kicker">Research</span>
-          <h2 className="section-heading mt-6 text-5xl md:text-6xl">Areas of exploration</h2>
+          <span className="eyebrow">// Research</span>
+          <h2 className="display mt-6 text-5xl md:text-7xl">Areas of exploration</h2>
         </div>
 
-        <div className="grid gap-20 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-px bg-[var(--line-soft)] md:grid-cols-2 lg:grid-cols-3">
           {researchAreas.map((area, i) => (
             <div
               key={area.title}
-              className={`shell-panel p-16 md:p-20 ${
-                area.isAI ? "border-[var(--accent)]/40" : ""
+              className={`flex min-h-[18rem] flex-col justify-between bg-black p-10 md:p-14 ${
+                area.isAI ? "border border-[var(--accent)]/40" : ""
               }`}
             >
-              <div className="mb-6 flex items-center justify-between">
-                <span className="mono-text text-[11px] uppercase tracking-[0.24em] text-white/38">
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-white/38">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                {area.isAI && (
-                  <span className="command-chip border-[var(--accent)]/40 bg-[var(--accent-subtle)] text-white/80">
-                    priority
-                  </span>
-                )}
+                {area.isAI && <span className="chip chip--solid text-[10px]">priority</span>}
               </div>
-              <h3 className="text-3xl font-semibold tracking-[-0.03em] text-white">
-                {area.title}
-              </h3>
-              <p className="section-copy mt-5 text-base leading-relaxed md:text-lg">
-                {area.description}
-              </p>
+              <div>
+                <h3 className="display text-3xl text-white md:text-4xl">{area.title}</h3>
+                <p className="body-copy mt-5 text-base md:text-lg">{area.description}</p>
+              </div>
             </div>
           ))}
         </div>
@@ -180,38 +190,22 @@ export default function Home() {
 
       {/* Contact */}
       <section className="py-40 md:py-56">
-        <div className="terminal-window">
-          <div className="terminal-bar">
-            <span className="terminal-dot" />
-            <span className="terminal-dot" />
-            <span className="terminal-dot" />
-            <span className="mono-text ml-3 text-[11px] uppercase tracking-[0.24em] text-white/40">
-              contact / prompt
-            </span>
+        <div className="panel flex flex-col items-start gap-10 p-10 md:p-20 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <span className="eyebrow">// Signal</span>
+            <h2 className="display mt-6 text-5xl md:text-7xl">Want to work together?</h2>
+            <p className="body-copy mt-12 max-w-xl text-lg md:text-xl">
+              Whether it is compliance automation, clinical training, or research collaboration,
+              the work is framed as an operating system for serious product thinking.
+            </p>
           </div>
-          <div className="grid gap-20 p-16 md:grid-cols-[1.05fr_0.95fr] md:p-24 lg:items-center">
-            <div>
-              <span className="section-kicker">Signal</span>
-              <h2 className="section-heading mt-6 text-5xl md:text-6xl">Want to work together?</h2>
-              <p className="section-copy mt-16 max-w-xl text-lg leading-relaxed md:text-xl">
-                Whether it is compliance automation, clinical training, or research collaboration,
-                the work is framed as an operating system for serious product thinking.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-4 lg:justify-end">
-              <Link
-                href="mailto:hello@asforetold.com"
-                className="command-chip border-transparent bg-[var(--accent)] text-[#06070b] hover:opacity-90"
-              >
-                Get in touch <span className="text-lg leading-none">→</span>
-              </Link>
-              <Link
-                href="/#work"
-                className="command-chip hover:border-white/20 hover:bg-white/[0.05] hover:text-white"
-              >
-                View products
-              </Link>
-            </div>
+          <div className="flex flex-wrap gap-4">
+            <Link href="mailto:hello@asforetold.com" className="chip chip--solid">
+              Get in touch →
+            </Link>
+            <Link href="/#work" className="chip">
+              View products
+            </Link>
           </div>
         </div>
       </section>

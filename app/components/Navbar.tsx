@@ -15,19 +15,18 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-[var(--line)] bg-[var(--bg-glass)] backdrop-blur-md">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 sm:px-8">
-        <Link href="/" className="flex items-center gap-3">
-          <span className="h-2.5 w-2.5 rounded-full bg-[var(--accent)] shadow-[0_0_18px_var(--accent)]" />
-          <span className="text-sm font-semibold tracking-wide text-white">As Foretold Labs</span>
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-[var(--line-soft)] bg-black/70 backdrop-blur-md">
+      <nav className="mx-auto flex w-full max-w-[100rem] items-center justify-between px-6 py-5 sm:px-10 md:px-16 lg:px-24 xl:px-28">
+        <Link href="/" className="display text-sm tracking-[0.12em] text-white">
+          AFL
         </Link>
 
-        <div className="hidden items-center gap-1 md:flex">
+        <div className="hidden items-center gap-7 md:flex">
           {links.map((l) => (
             <Link
               key={l.label}
               href={l.href}
-              className="command-chip hover:border-white/20 hover:bg-white/[0.05] hover:text-white"
+              className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/60 transition-colors hover:text-[var(--accent)]"
             >
               {l.label}
             </Link>
@@ -37,25 +36,21 @@ export default function Navbar() {
         <button
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
-          className="rounded-md border border-[var(--line)] p-2 text-white/80 md:hidden"
+          className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/70 md:hidden"
         >
-          <div className="space-y-1.5">
-            <span className="block h-0.5 w-5 bg-current" />
-            <span className="block h-0.5 w-5 bg-current" />
-            <span className="block h-0.5 w-5 bg-current" />
-          </div>
+          {open ? "Close" : "Menu"}
         </button>
       </nav>
 
       {open && (
-        <div className="border-t border-[var(--line)] px-6 py-4 md:hidden">
+        <div className="border-t border-[var(--line-soft)] px-6 py-4 md:hidden">
           <div className="flex flex-col gap-1">
             {links.map((l) => (
               <Link
                 key={l.label}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="rounded-md px-3 py-2 text-sm text-white/70 hover:bg-white/5 hover:text-white"
+                className="rounded-md px-3 py-2 font-mono text-[11px] uppercase tracking-[0.2em] text-white/70 hover:bg-white/5 hover:text-[var(--accent)]"
               >
                 {l.label}
               </Link>

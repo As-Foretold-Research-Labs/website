@@ -35,65 +35,61 @@ const providers = [
 
 export default function DokSimPage() {
   return (
-    <div data-theme="doksim" className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-      <section className="flex min-h-[80vh] flex-col justify-center py-44 md:py-56">
-        <span className="section-kicker mb-10">Portfolio Product / Clinical Simulation</span>
-        <h1 className="section-heading max-w-3xl">DokSim</h1>
-        <p className="mt-12 max-w-2xl text-xl text-[var(--accent-2)] md:text-2xl">
-          Clinical conversation training, safely scaled.
-        </p>
-        <p className="section-copy mt-10 max-w-2xl text-lg leading-relaxed md:text-xl">
+    <div data-theme="doksim" className="w-full px-6 sm:px-10 md:px-16 lg:px-24 xl:px-28">
+      <section className="flex min-h-[80vh] flex-col justify-center py-40 md:py-56">
+        <span className="eyebrow mb-10">// Portfolio Product — Clinical Simulation</span>
+        <h1 className="display max-w-4xl text-[clamp(3rem,9vw,7rem)]">DokSim</h1>
+        <p className="mt-12 max-w-2xl body-copy text-lg md:text-xl">
           DokSim is a production-grade patient-communication simulator built on LangGraph +
           LangChain. It trains clinicians through structured, multi-turn conversations with
           synthetic patients — judged by LLM evaluators, without real patients, risk, or bias.
         </p>
         <div className="mt-16 flex flex-wrap gap-3">
           {["Python 3.11", "LangGraph + LangChain", "Chroma", "FastAPI", "Azure AI Foundry"].map((t) => (
-            <span key={t} className="command-chip text-white/72">{t}</span>
+            <span key={t} className="chip">
+              {t}
+            </span>
           ))}
         </div>
       </section>
 
       <section className="py-24 md:py-32">
-        <h2 className="section-heading mb-16 text-3xl md:text-4xl">What it does</h2>
-        <div className="grid gap-20 md:grid-cols-2">
+        <span className="eyebrow mb-16 block">// What it does</span>
+        <div className="grid gap-px bg-[var(--line-soft)] md:grid-cols-2">
           {features.map((f) => (
-            <div key={f.title} className="shell-panel p-16 md:p-20">
-              <h3 className="mono-text text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--accent-1)]">
+            <div key={f.title} className="bg-black p-10 md:p-14">
+              <h3 className="font-mono text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--accent)]">
                 {f.title}
               </h3>
-              <p className="section-copy mt-5 text-base leading-relaxed md:text-lg">{f.desc}</p>
+              <p className="body-copy mt-5 text-base md:text-lg">{f.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
       <section className="py-24 md:py-32">
-        <h2 className="section-heading mb-16 text-3xl md:text-4xl">Providers</h2>
-        <div className="grid gap-20 md:grid-cols-3">
+        <span className="eyebrow mb-16 block">// Providers</span>
+        <div className="grid gap-px bg-[var(--line-soft)] md:grid-cols-3">
           {providers.map((p) => (
-            <div key={p.name} className="shell-panel p-16 md:p-20">
-              <h3 className="mono-text text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--accent-1)]">
+            <div key={p.name} className="bg-black p-10 md:p-14">
+              <h3 className="font-mono text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--accent)]">
                 {p.name}
               </h3>
-              <p className="section-copy mt-5 text-base leading-relaxed md:text-lg">{p.detail}</p>
+              <p className="body-copy mt-5 text-base md:text-lg">{p.detail}</p>
             </div>
           ))}
         </div>
       </section>
 
       <section className="py-24 md:py-32">
-        <h2 className="section-heading mb-16 text-3xl md:text-4xl">System design</h2>
-        <div className="terminal-window">
-          <div className="terminal-bar">
-            <span className="terminal-dot" />
-            <span className="terminal-dot" />
-            <span className="terminal-dot" />
-            <span className="mono-text ml-3 text-[11px] uppercase tracking-[0.24em] text-white/40">
+        <span className="eyebrow mb-16 block">// System design</span>
+        <div className="panel overflow-hidden">
+          <div className="border-b border-[var(--line-soft)] px-6 py-4">
+            <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-white/40">
               system design / data flow
             </span>
           </div>
-          <div className="bg-[#08090e] p-10 font-mono text-sm leading-relaxed text-white/60">
+          <div className="bg-black p-8 font-mono text-sm leading-relaxed text-white/60">
             <pre className="whitespace-pre overflow-x-auto">{`
 Persona + Scenario (YAML)
         │
@@ -118,23 +114,20 @@ JSONL Session Logs [ turn, latency_ms, judge_score ]
       </section>
 
       <section className="py-24 md:py-32">
-        <div className="shell-panel flex flex-col items-start gap-6 p-16 md:flex-row md:items-center md:justify-between md:p-20">
+        <div className="panel flex flex-col items-start gap-6 p-10 md:flex-row md:items-center md:justify-between md:p-16">
           <div>
-            <span className="section-kicker">Signal</span>
-            <h2 className="section-heading mt-6 text-3xl md:text-4xl">Interested in DokSim?</h2>
-            <p className="section-copy mt-6 max-w-xl text-base leading-relaxed md:text-lg">
+            <span className="eyebrow">// Signal</span>
+            <h2 className="display mt-6 text-3xl md:text-5xl">Interested in DokSim?</h2>
+            <p className="body-copy mt-5 max-w-xl text-base md:text-lg">
               Active development. I can discuss persona authoring, RAG design, or the
               safe-branch safety model.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link
-              href="mailto:hello@asforetold.com?subject=DokSim%20inquiry"
-              className="command-chip border-transparent bg-[var(--accent-1)] text-[#040a09] hover:opacity-90"
-            >
-              Get in touch <span className="text-lg leading-none">→</span>
+            <Link href="mailto:hello@asforetold.com?subject=DokSim%20inquiry" className="chip chip--solid">
+              Get in touch →
             </Link>
-            <Link href="/" className="command-chip hover:border-white/20 hover:bg-white/[0.05] hover:text-white">
+            <Link href="/" className="chip">
               ← Back
             </Link>
           </div>
