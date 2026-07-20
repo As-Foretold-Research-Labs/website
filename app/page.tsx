@@ -59,152 +59,120 @@ const researchAreas = [
 
 export default function Home() {
   return (
-    <div className="w-full px-6 sm:px-10 md:px-16 lg:px-24 xl:px-28">
-      {/* Hero */}
-      <section className="flex min-h-[90vh] flex-col justify-center py-36 md:py-48 mb-20">
-        <span className="eyebrow mb-10">// The Future is Being Written</span>
-        <h1 className="display max-w-[14ch] text-[clamp(2.75rem,10vw,8.5rem)]">
-          As Foretold
-          <br />
-          Labs
+    <div className="w-full">
+      {/* Hero - full height with minimal padding */}
+      <section className="flex min-h-screen flex-col items-center justify-center py-28 md:py-40">
+        <span className="eyebrow mb-6">// The Future is Being Written</span>
+        <h1 className="display max-w-[14ch] text-center text-[clamp(3rem,15vw,9rem)] leading-none">
+          AS FORETOLD LABS
         </h1>
-        <p className="mt-12 max-w-2xl body-copy text-lg md:text-xl">
-          We build intelligent systems at the intersection of simulation, automation, and
-          human-computer interaction.
+        <p className="mt-12 max-w-2xl text-center body-copy text-lg md:text-xl leading-relaxed">
+          We build intelligent systems at the intersection of simulation, automation, and human-computer interaction.
         </p>
-        <div className="mt-16 flex flex-wrap gap-4">
-          <Link href="/#work" className="chip chip--solid">
-            View products →
-          </Link>
-          <Link href="/#research" className="chip">
-            Research areas
-          </Link>
+        <div className="mt-16 flex gap-4">
+          <Link href="/products/augur" className="chip chip--solid">View products →</Link>
+          <Link href="#research" className="chip">Research areas</Link>
         </div>
       </section>
 
-      {/* Marquee band */}
-      <section className="overflow-hidden border-y border-[var(--line-soft)] py-8 md:py-12">
-        <div className="marquee gap-16">
+      {/* Marquee band - border frame with scrolling keywords */}
+      <section className="my-8 border-y border-[var(--line-soft)] bg-black/40 backdrop-blur-sm">
+        <div className="marquee gap-20 overflow-hidden py-6">
           {[0, 1].map((dup) => (
-            <div key={dup} className="flex shrink-0 items-center gap-16 pr-16" aria-hidden={dup === 1}>
-              <span className="display whitespace-nowrap text-2xl text-white/15 md:text-4xl">
-                Simulation
-              </span>
-              <span className="display whitespace-nowrap text-2xl text-white/15 md:text-4xl">
-                Automation
-              </span>
-              <span className="display whitespace-nowrap text-2xl text-[var(--accent)] md:text-4xl">
-                Human-Computer Interaction
-              </span>
-              <span className="display whitespace-nowrap text-2xl text-white/15 md:text-4xl">
-                Research Systems
-              </span>
+            <div key={dup} className="flex shrink-0 items-center gap-20 pr-20" aria-hidden={dup === 1}>
+              <span className="display whitespace-nowrap text-2xl uppercase tracking-[0.2em] text-white/25 md:text-4xl">Simulation</span>
+              <span className="display whitespace-nowrap text-2xl uppercase tracking-[0.2em] text-white/25 md:text-4xl">Automation</span>
+              <span className="display whitespace-nowrap text-2xl uppercase tracking-[0.2em] text-[var(--accent)] md:text-4xl">Human-Computer Interaction</span>
+              <span className="display whitespace-nowrap text-2xl uppercase tracking-[0.2em] text-white/25 md:text-4xl">Research Systems</span>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Stats strip */}
-      <section className="grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-8">
+      {/* Stats strip - compact grid */}
+      <section className="mb-16 mt-8 grid grid-cols-2 gap-px border-y border-[var(--line-soft)] bg-[var(--panel)] md:grid-cols-4">
         {stats.map((s) => (
-          <div key={s.label} className="border border-[var(--line-soft)] p-8 md:p-12">
+          <div key={s.label} className="border-r border-[var(--line-soft)] px-8 py-10 last:border-r-0">
             <p className="display text-3xl text-white md:text-4xl">{s.value}</p>
-            <p className="mt-4 break-words font-mono text-[11px] uppercase tracking-[0.2em] text-white/40">
+            <p className="mt-2 break-words font-mono text-xs uppercase tracking-[0.2em] text-white/50">
               {s.label}
             </p>
           </div>
         ))}
       </section>
 
-      {/* Work — full-width stacked cards */}
-      <section id="work" className="py-36 md:py-48 pr-8 md:pr-12 lg:pr-16">
+      {/* Products - stacked editorial cards */}
+      <section id="products" className="mb-24 pr-8 md:pr-12 lg:pr-16">
         <div className="mb-20 flex flex-col gap-8 md:flex-row md:items-end md:justify-between md:gap-16">
           <div className="min-w-0">
             <span className="eyebrow">// Workload</span>
-            <h2 className="display mt-6 text-5xl md:text-7xl">Products in focus</h2>
+            <h2 className="display mt-6 text-5xl md:text-7xl">PRODUCTS IN FOCUS</h2>
           </div>
-          <p className="body-copy max-w-md shrink-0 text-base md:text-lg">
-            Two active product surfaces, both framed as modern operational tools rather than
-            marketing pages.
+          <p className="body-copy max-w-md shrink-0 text-base md:text-lg leading-relaxed">
+            Two active product surfaces, both framed as modern operational tools rather than marketing pages.
           </p>
         </div>
 
-        <div className="flex flex-col gap-10">
-          {products.map((p) => (
-            <Link
-              key={p.href}
-              href={p.href}
-              className="panel group flex flex-col justify-between p-10 transition-transform duration-300 hover:-translate-y-1 md:p-16"
-            >
-              <div className="flex items-start justify-between gap-6">
-                <span className="index-label">{p.index}</span>
-                <span className="text-right font-mono text-[11px] uppercase tracking-[0.24em] text-white/40">
-                  {p.category}
-                </span>
-              </div>
-              <h3 className="display mt-10 text-5xl text-white md:text-8xl">{p.title}</h3>
-              <p className="body-copy mt-8 max-w-xl text-base md:text-lg">{p.description}</p>
-              <div className="mt-12 flex flex-wrap gap-3">
-                {p.tags.map((t) => (
-                  <span key={t} className="chip">
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </Link>
+        {/* Product 1 */}
+        <article className="mb-16 border border-[var(--line)] bg-[var(--panel)] p-8 md:p-12 hover:bg-[var(--panel-hover)] transition-colors" href={products[0].href}>
+          <span className="eyebrow mb-4 text-lg tracking-widest opacity-50">{products[0].index}</span>
+          <div className="mb-4">
+            <h3 className="display text-white">{products[0].title}</h3>
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-white/60">{products[0].category}</p>
+          </div>
+          <p className="mb-6 body-copy max-w-xl leading-relaxed opacity-90">{products[0].description}</p>
+          <div className="flex flex-wrap gap-3">
+            {products[0].tags.map((tag) => (
+              <span key={tag} className="px-3 py-1 rounded-full bg-[var(--line)] font-mono text-xs uppercase tracking-wide opacity-80">{tag}</span>
+            ))}
+          </div>
+        </article>
+
+        {/* Product 2 */}
+        <article href={products[1].href}>
+          <span className="eyebrow mb-4 text-lg tracking-widest opacity-50">{products[1].index}</span>
+          <div className="mb-4">
+            <h3 className="display text-white">{products[1].title}</h3>
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-white/60">{products[1].category}</p>
+          </div>
+          <p className="mb-6 body-copy max-w-xl leading-relaxed opacity-90">{products[1].description}</p>
+          <div className="flex flex-wrap gap-3">
+            {products[1].tags.map((tag) => (
+              <span key={tag} className="px-3 py-1 rounded-full bg-[var(--line)] font-mono text-xs uppercase tracking-wide opacity-80">{tag}</span>
+            ))}
+          </div>
+        </article>
+      </section>
+
+      {/* Research grid */}
+      <section id="research" className="mb-24">
+        <span className="eyebrow">// Exploration</span>
+        <h2 className="display mt-6 text-5xl md:text-7xl">AREAS OF EXPLORATION</h2>
+        
+        <div className="mt-12 grid grid-cols-1 gap-px border-y border-[var(--line)] bg-[var(--panel)] md:grid-cols-2 lg:grid-cols-3">
+          {researchAreas.map((area, idx) => (
+            <article key={idx} className="min-h-[300px] border-b border-[var(--line)] last:border-b-0 p-8 md:p-10 hover:bg-[var(--panel-hover)] transition-colors">
+              <h3 className={`display ${area.isAI ? 'text-white' : 'text-white/90'} mb-4 leading-none`}>
+                {area.title}
+              </h3>
+              <p className="body-copy text-sm leading-relaxed opacity-80 max-w-xl">
+                {area.description}
+              </p>
+            </article>
           ))}
         </div>
       </section>
 
-      {/* Research */}
-      <section id="research" className="py-36 md:py-48">
-        <div className="mb-20">
-          <span className="eyebrow">// Research</span>
-          <h2 className="display mt-6 text-5xl md:text-7xl">Areas of exploration</h2>
-        </div>
-
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {researchAreas.map((area, i) => (
-            <div
-              key={area.title}
-              className={`flex min-h-[16rem] flex-col justify-between border border-[var(--line-soft)] p-10 md:p-14 ${
-                area.isAI ? "border-[var(--accent)]/40" : ""
-              }`}
-            >
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-white/38">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                {area.isAI && <span className="chip chip--solid text-[10px]">priority</span>}
-              </div>
-              <div>
-                <h3 className="display text-3xl text-white md:text-4xl">{area.title}</h3>
-                <p className="body-copy mt-5 text-base md:text-lg">{area.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Contact */}
-      <section className="py-36 md:py-48">
-        <div className="panel flex flex-col items-start gap-10 p-10 md:p-20 lg:flex-row lg:items-center lg:justify-between">
-          <div>
-            <span className="eyebrow">// Signal</span>
-            <h2 className="display mt-6 text-5xl md:text-7xl">Want to work together?</h2>
-            <p className="body-copy mt-12 max-w-xl text-lg md:text-xl">
-              Whether it is compliance automation, clinical training, or research collaboration,
-              the work is framed as an operating system for serious product thinking.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-4">
-            <Link href="mailto:hello@asforetold.com" className="chip chip--solid">
-              Get in touch →
-            </Link>
-            <Link href="/#work" className="chip">
-              View products
-            </Link>
-          </div>
+      {/* CTA */}
+      <section className="py-24 md:py-32">
+        <span className="eyebrow">// Connect</span>
+        <h2 className="display mt-6 text-5xl md:text-7xl">WANT TO WORK TOGETHER?</h2>
+        <p className="mt-8 body-copy max-w-xl leading-relaxed opacity-80">
+          We&apos;re always exploring new partnerships and technical challenges. Let us know what you&apos;re building.
+        </p>
+        <div className="mt-12 flex justify-end gap-4">
+          <Link href="/contact" className="chip chip--solid">Get in touch →</Link>
+          <Link href="/products/augur" className="chip">View products</Link>
         </div>
       </section>
     </div>
