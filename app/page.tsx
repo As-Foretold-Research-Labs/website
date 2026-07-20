@@ -61,9 +61,9 @@ export default function Home() {
   return (
     <div className="w-full px-6 sm:px-10 md:px-16 lg:px-24 xl:px-28">
       {/* Hero */}
-      <section className="flex min-h-[92vh] flex-col justify-center py-40 md:py-56">
+      <section className="flex min-h-[90vh] flex-col justify-center py-36 md:py-48">
         <span className="eyebrow mb-10">// The Future is Being Written</span>
-        <h1 className="display max-w-5xl text-[clamp(3rem,11vw,9rem)]">
+        <h1 className="display max-w-[14ch] text-[clamp(2.75rem,10vw,8.5rem)]">
           As Foretold
           <br />
           Labs
@@ -105,42 +105,40 @@ export default function Home() {
       </section>
 
       {/* Stats strip */}
-      <section className="grid grid-cols-2 gap-px border-b border-[var(--line-soft)] bg-[var(--line-soft)] md:grid-cols-4">
+      <section className="grid grid-cols-2 gap-6 md:grid-cols-4">
         {stats.map((s) => (
-          <div key={s.label} className="bg-black p-10 md:p-14">
+          <div key={s.label} className="border border-[var(--line-soft)] p-8 md:p-12">
             <p className="display text-3xl text-white md:text-4xl">{s.value}</p>
-            <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.24em] text-white/40">
+            <p className="mt-4 break-words font-mono text-[11px] uppercase tracking-[0.2em] text-white/40">
               {s.label}
             </p>
           </div>
         ))}
       </section>
 
-      {/* Work — asymmetric staggered */}
-      <section id="work" className="py-40 md:py-56">
-        <div className="mb-28 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div>
+      {/* Work — full-width stacked cards */}
+      <section id="work" className="py-36 md:py-48">
+        <div className="mb-20 flex flex-col gap-8 md:flex-row md:items-end md:justify-between md:gap-16">
+          <div className="min-w-0">
             <span className="eyebrow">// Workload</span>
             <h2 className="display mt-6 text-5xl md:text-7xl">Products in focus</h2>
           </div>
-          <p className="body-copy max-w-md text-base md:text-lg">
+          <p className="body-copy max-w-md shrink-0 text-base md:text-lg">
             Two active product surfaces, both framed as modern operational tools rather than
             marketing pages.
           </p>
         </div>
 
-        <div className="flex flex-col gap-20">
-          {products.map((p, i) => (
+        <div className="flex flex-col gap-10">
+          {products.map((p) => (
             <Link
               key={p.href}
               href={p.href}
-              className={`panel group flex flex-col justify-between p-10 transition-transform duration-300 hover:-translate-y-1 md:p-16 ${
-                i % 2 === 1 ? "md:ml-auto md:w-[82%]" : "md:w-[82%]"
-              }`}
+              className="panel group flex flex-col justify-between p-10 transition-transform duration-300 hover:-translate-y-1 md:p-16"
             >
-              <div className="flex items-start justify-between">
+              <div className="flex items-start justify-between gap-6">
                 <span className="index-label">{p.index}</span>
-                <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-white/40">
+                <span className="text-right font-mono text-[11px] uppercase tracking-[0.24em] text-white/40">
                   {p.category}
                 </span>
               </div>
@@ -159,18 +157,18 @@ export default function Home() {
       </section>
 
       {/* Research */}
-      <section id="research" className="py-40 md:py-56">
-        <div className="mb-28">
+      <section id="research" className="py-36 md:py-48">
+        <div className="mb-20">
           <span className="eyebrow">// Research</span>
           <h2 className="display mt-6 text-5xl md:text-7xl">Areas of exploration</h2>
         </div>
 
-        <div className="grid gap-px bg-[var(--line-soft)] md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {researchAreas.map((area, i) => (
             <div
               key={area.title}
-              className={`flex min-h-[18rem] flex-col justify-between bg-black p-10 md:p-14 ${
-                area.isAI ? "border border-[var(--accent)]/40" : ""
+              className={`flex min-h-[16rem] flex-col justify-between border border-[var(--line-soft)] p-10 md:p-14 ${
+                area.isAI ? "border-[var(--accent)]/40" : ""
               }`}
             >
               <div className="flex items-center justify-between">
@@ -189,7 +187,7 @@ export default function Home() {
       </section>
 
       {/* Contact */}
-      <section className="py-40 md:py-56">
+      <section className="py-36 md:py-48">
         <div className="panel flex flex-col items-start gap-10 p-10 md:p-20 lg:flex-row lg:items-center lg:justify-between">
           <div>
             <span className="eyebrow">// Signal</span>
