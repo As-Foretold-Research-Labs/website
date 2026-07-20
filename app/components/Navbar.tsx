@@ -16,17 +16,17 @@ export default function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-[var(--line-soft)] bg-black/70 backdrop-blur-md">
-      <nav className="mx-auto flex w-full max-w-[100rem] items-center justify-between px-6 py-5 sm:px-10 md:px-16 lg:px-24 xl:px-28">
-        <Link href="/" className="display text-sm tracking-[0.12em] text-white">
+      <nav className="mx-auto flex w-full max-w-[100rem] items-center justify-between px-8 py-4 sm:px-10 md:px-20 lg:px-28 xl:px-32">
+        <Link href="/" className="display text-sm tracking-[0.08em] text-white/90 transition-colors hover:text-[var(--accent)]">
           AFL
         </Link>
 
-        <div className="hidden items-center gap-7 md:flex">
+        <div className="hidden items-center gap-12 md:flex">
           {links.map((l) => (
             <Link
               key={l.label}
               href={l.href}
-              className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/60 transition-colors hover:text-[var(--accent)]"
+              className="font-mono text-[13px] uppercase tracking-[0.18em] text-white/60 transition-colors hover:text-[var(--accent)]"
             >
               {l.label}
             </Link>
@@ -36,21 +36,21 @@ export default function Navbar() {
         <button
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
-          className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/70 md:hidden"
+          className="font-mono text-[13px] uppercase tracking-[0.18em] text-white/70 md:hidden"
         >
           {open ? "Close" : "Menu"}
         </button>
       </nav>
 
       {open && (
-        <div className="border-t border-[var(--line-soft)] px-6 py-4 md:hidden">
-          <div className="flex flex-col gap-1">
+        <div className="border-t border-[var(--line-soft)] px-8 py-5 md:hidden">
+          <div className="flex flex-col gap-3">
             {links.map((l) => (
               <Link
                 key={l.label}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="rounded-md px-3 py-2 font-mono text-[11px] uppercase tracking-[0.2em] text-white/70 hover:bg-white/5 hover:text-[var(--accent)]"
+                className="rounded-md px-4 py-2 font-mono text-[13px] uppercase tracking-[0.18em] text-white/70 hover:bg-white/5 hover:text-[var(--accent)]"
               >
                 {l.label}
               </Link>

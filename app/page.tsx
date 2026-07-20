@@ -61,7 +61,7 @@ export default function Home() {
   return (
     <div className="w-full px-6 sm:px-10 md:px-16 lg:px-24 xl:px-28">
       {/* Hero */}
-      <section className="flex min-h-[90vh] flex-col justify-center py-36 md:py-48">
+      <section className="flex min-h-[90vh] flex-col justify-center py-36 md:py-48 mb-20">
         <span className="eyebrow mb-10">// The Future is Being Written</span>
         <h1 className="display max-w-[14ch] text-[clamp(2.75rem,10vw,8.5rem)]">
           As Foretold
@@ -83,7 +83,7 @@ export default function Home() {
       </section>
 
       {/* Marquee band */}
-      <section className="overflow-hidden border-y border-[var(--line-soft)] py-8">
+      <section className="overflow-hidden border-y border-[var(--line-soft)] py-8 md:py-12">
         <div className="marquee gap-16">
           {[0, 1].map((dup) => (
             <div key={dup} className="flex shrink-0 items-center gap-16 pr-16" aria-hidden={dup === 1}>
@@ -105,7 +105,7 @@ export default function Home() {
       </section>
 
       {/* Stats strip */}
-      <section className="grid grid-cols-2 gap-6 md:grid-cols-4">
+      <section className="grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-8">
         {stats.map((s) => (
           <div key={s.label} className="border border-[var(--line-soft)] p-8 md:p-12">
             <p className="display text-3xl text-white md:text-4xl">{s.value}</p>
@@ -117,7 +117,7 @@ export default function Home() {
       </section>
 
       {/* Work — full-width stacked cards */}
-      <section id="work" className="py-36 md:py-48">
+      <section id="work" className="py-36 md:py-48 pr-8 md:pr-12 lg:pr-16">
         <div className="mb-20 flex flex-col gap-8 md:flex-row md:items-end md:justify-between md:gap-16">
           <div className="min-w-0">
             <span className="eyebrow">// Workload</span>
@@ -163,7 +163,7 @@ export default function Home() {
           <h2 className="display mt-6 text-5xl md:text-7xl">Areas of exploration</h2>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {researchAreas.map((area, i) => (
             <div
               key={area.title}
