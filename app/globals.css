@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #000000;
-  --bg-soft: #050505;
-  --fg: #ffffff;
-  --muted: rgba(255, 255, 255, 0.55);
-  --dim: rgba(255, 255, 255, 0.34);
+  --bg: #050505;
+  --bg-soft: #0a0a0a;
+  --fg: #fafafa;
+  --muted: rgba(250, 250, 250, 0.7);
+  --dim: rgba(250, 250, 250, 0.45);
   --accent: #ccff00;
-  --line: rgba(255, 255, 255, 0.12);
-  --line-soft: rgba(255, 255, 255, 0.07);
-  --panel: rgba(255, 255, 255, 0.03);
-  --panel-hover: rgba(255, 255, 255, 0.06);
+  --line: rgba(250, 250, 250, 0.1);
+  --line-soft: rgba(250, 250, 250, 0.06);
+  --panel: rgba(250, 250, 250, 0.03);
+  --panel-hover: rgba(250, 250, 250, 0.07);
   --font-display: var(--font-syncopate), "Arial Narrow", sans-serif;
   --font-mono: var(--font-space-mono), ui-monospace, monospace;
   --font-serif: var(--font-cormorant), Georgia, serif;
@@ -74,8 +74,8 @@ a:focus-visible {
 /* Section eyebrow — code-comment style */
 .eyebrow {
   font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.28em;
+  font-size: 11px;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--accent);
 }
@@ -103,7 +103,7 @@ a:focus-visible {
 .marquee {
   display: flex;
   width: max-content;
-  animation: marquee 26s linear infinite;
+  animation: marquee 28s linear infinite;
 }
 
 .marquee:hover {
@@ -115,7 +115,8 @@ a:focus-visible {
   position: relative;
   border: 1px solid var(--line);
   background: var(--panel);
-  transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+  transition: border-color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              background 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .panel:hover {
@@ -123,25 +124,28 @@ a:focus-visible {
   background: var(--panel-hover);
 }
 
-/* Chip / button */
+/* Chip / button - refined with subtle lift */
 .chip {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   border: 1px solid var(--line);
   border-radius: 999px;
-  padding: 0.7rem 1.1rem;
+  padding: 0.75rem 1.2rem;
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--fg);
-  transition: all 0.25s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .chip:hover {
   border-color: var(--accent);
   color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(204, 255, 0, 0.12);
 }
 
 .chip--solid {
@@ -153,11 +157,13 @@ a:focus-visible {
 .chip--solid:hover {
   background: #d9ff33;
   color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(204, 255, 0, 0.2);
 }
 
 .index-label {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 0.2em;
   color: var(--accent);
 }
@@ -166,4 +172,83 @@ a:focus-visible {
   font-family: var(--font-serif);
   font-style: italic;
   font-weight: 400;
+}
+
+/* Fade in up animation for hero */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.delay-150 {
+  animation-delay: 150ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+/* Smooth scroll reveal */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .reveal-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom scrollbar for research grid */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(204, 255, 0, 0.4);
+}
+
+/* Smooth transitions for all interactive elements */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-duration: 300ms;
+}
+
+/* Reduced motion fallback */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up,
+  .marquee,
+  .chip,
+  .panel,
+  .group-hover\:scale-105,
+  .group-hover\:translate-y,
+  .transition-all,
+  .reveal-on-scroll {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
