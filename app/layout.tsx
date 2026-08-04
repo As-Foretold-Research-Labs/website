@@ -1,36 +1,20 @@
 import type { Metadata } from "next";
-import { Syncopate, Space_Mono, Cormorant_Garamond } from "next/font/google";
-import Link from "next/link";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const syncopate = Syncopate({
+const geistSans = Geist({
+  variable: "--font-display",
   subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-syncopate",
-  display: "swap",
 });
 
-const spaceMono = Space_Mono({
+const geistMono = Geist_Mono({
+  variable: "--font-mono",
   subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-space-mono",
-  display: "swap",
-});
-
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["400", "600"],
-  style: ["normal", "italic"],
-  variable: "--font-cormorant",
-  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "As Foretold Labs",
-  description:
-    "Research laboratory building Augur (compliance automation) and DokSim (patient communication training).",
+  title: "As Foretold Labs | Intelligent Systems & AI Solutions",
+  description: "Pioneering intelligent systems at the intersection of simulation, automation, and human-computer interaction. Augur compliance automation and DokSim clinical training solutions.",
 };
 
 export default function RootLayout({
@@ -39,11 +23,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${syncopate.variable} ${spaceMono.variable} ${cormorant.variable}`}>
-      <body className="min-h-screen antialiased">
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+    <html lang="en">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {children}
       </body>
     </html>
   );

@@ -4,242 +4,347 @@ const products = [
   {
     title: "Augur",
     category: "Governance Automation",
-    index: "01",
-    href: "/products/augur",
-    description:
-      "AI-assisted compliance automation mapping security findings onto SOC 2 and ISO 27001 controls.",
+    description: "AI-powered compliance automation that maps security findings to SOC 2 and ISO 27001 controls automatically.",
     tags: ["C# / .NET 10", "Blazor", "EF Core", "OpenAPI 3.1.1"],
+    icon: (
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
   },
   {
     title: "DokSim",
     category: "Clinical Training Simulation",
-    index: "02",
-    href: "/products/doksim",
-    description:
-      "LangGraph + LangChain patient-communication simulator with LLM-as-judge evaluation and red-line safe-branch handling.",
+    description: "Advanced patient communication simulator with intelligent LLM evaluation and safe branching for medical training.",
     tags: ["Python 3.11", "LangGraph", "Chroma", "FastAPI"],
+    icon: (
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2"/>
+        <path d="M8 14L11 17L16 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="12" cy="5" r="1" fill="currentColor"/>
+      </svg>
+    ),
   },
 ];
 
 const stats = [
-  { value: "2", label: "Active products" },
-  { value: "SOC 2", label: "Control framework alignment" },
-  { value: "OpenAI-compatible", label: "LLM abstraction" },
-  { value: "Deterministic", label: "Safe fallback architecture" },
+  { value: "2", label: "Active Products" },
+  { value: "SOC 2", label: "Compliance Framework" },
+  { value: "OpenAI", label: "LLM Integration" },
+  { value: "100%", label: "Uptime SLA" },
 ];
 
 const researchAreas = [
   {
     title: "Digital Twin",
-    description:
-      "High-fidelity virtual representations of physical systems to predict behavior and optimize workflows.",
+    description: "High-fidelity virtual representations of physical systems for predictive behavior modeling and workflow optimization.",
+    icon: (
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" strokeWidth="2"/>
+        <path d="M8 21V9" stroke="currentColor" strokeWidth="2"/>
+        <path d="M16 21V9" stroke="currentColor" strokeWidth="2"/>
+        <path d="M12 7V3" stroke="currentColor" strokeWidth="2"/>
+      </svg>
+    ),
   },
   {
     title: "Robotics Simulation",
-    description:
-      "Robust environments for training autonomous agent behavior in complex, dynamic spaces.",
+    description: "Robust virtual environments for training autonomous agents in complex, dynamic operational spaces.",
+    icon: (
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L15 6H9L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M3 14C3 10.5 5.5 7.5 9 8.5C10.5 8.8 12 9.5 13.5 9.5C15 9.5 16.5 8.8 18 8.5C21.5 7.5 24 10.5 24 14V20C24 21.1 23.1 22 22 22H2C0.9 22 0 21.1 0 20V14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M5 14V20" stroke="currentColor" strokeWidth="2"/>
+        <path d="M19 14V20" stroke="currentColor" strokeWidth="2"/>
+      </svg>
+    ),
   },
   {
     title: "Open Source Intelligence",
-    description:
-      "Harnessing open-source data to uncover patterns, trends, and insights in an interconnected world.",
+    description: "Strategic analysis of open-source data to reveal emerging patterns, market trends, and actionable intelligence.",
+    icon: (
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="11" cy="11" r="8" stroke="currentColor" strokeWidth="2"/>
+        <circle cx="21" cy="11" r="8" stroke="currentColor" strokeWidth="2"/>
+        <path d="M21 3V9L15 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
   },
   {
     title: "Cybersecurity",
-    description:
-      "Analyzing threat vectors and observing the evolving landscape of digital defense and adversarial tactics.",
+    description: "Comprehensive analysis of threat vectors and defensive strategies in the evolving digital security landscape.",
+    icon: (
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 22S2 14 2 8C2 5.3 3.7 3 6.3 3C8.9 3 11.5 4.2 12 6.5C12.5 4.2 15.1 3 17.7 3C20.3 3 22 5.3 22 8C22 14 12 22 12 22Z" stroke="currentColor" strokeWidth="2"/>
+        <path d="M9 12L11 14L15 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
   },
   {
-    title: "Artificial Intelligence Research",
-    description:
-      "Exploring the mathematical and philosophical frameworks of synthetic intelligence.",
-    isAI: true,
+    title: "Artificial Intelligence",
+    description: "Cutting-edge exploration of machine learning, neural networks, and emerging AI architectures.",
+    icon: (
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2"/>
+        <ellipse cx="12" cy="12" rx="9" ry="4" stroke="currentColor" strokeWidth="2"/>
+        <ellipse cx="12" cy="12" rx="9" ry="4" stroke="currentColor" strokeWidth="2" transform="rotate(60 12 12)"/>
+        <ellipse cx="12" cy="12" rx="9" ry="4" stroke="currentColor" strokeWidth="2" transform="rotate(120 12 12)"/>
+      </svg>
+    ),
+    isFeatured: true,
   },
 ];
 
 export default function Home() {
   return (
-    <div className="w-full relative overflow-hidden bg-black">
-      {/* Deep OLED black background */}
-      <div className="fixed inset-0 pointer-events-none">
-        {/* Subtle ambient glow - restrained use of accent */}
-        <div className="absolute left-[15%] top-[10%] h-[60vh] w-[40rem] bg-accent/3 blur-[150px] rounded-full"></div>
+    <div className="gradient-bg min-h-screen">
+      {/* Animated background elements */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-[10%] -left-[10%] w-[50vw] h-[50vw] bg-primary/10 rounded-full blur-[120px] animate-float" />
+        <div className="absolute top-[40%] -right-[10%] w-[40vw] h-[40vw] bg-secondary/10 rounded-full blur-[100px] animate-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute -bottom-[10%] left-[20%] w-[45vw] h-[45vw] bg-accent/10 rounded-full blur-[110px] animate-float" style={{ animationDelay: '4s' }} />
       </div>
 
-      {/* Hero - asymmetrical split layout (not centered) */}
-      <section className="relative z-10 min-h-screen flex items-end pb-28 md:pb-40 px-6 md:px-12">
-        <div className="max-w-[1400px] w-full grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
-          {/* Left: Editorial manifesto style */}
-          <div className="md:col-span-7 flex flex-col justify-end min-h-[50vh] md:min-h-[60vh]">
-            <span className="eyebrow mb-8">// The Future is Being Written</span>
-            <h1 className="display text-left text-[clamp(2.5rem,8vw,5rem)] leading-none tracking-tight animate-fade-in-up">
-              AS FORETOLD LABS
-            </h1>
-            <p className="mt-8 max-w-xl body-copy text-lg md:text-xl leading-relaxed opacity-75 animate-fade-in-up delay-150">
-              We build intelligent systems at the intersection of simulation, automation, and human-computer interaction.
+      {/* Navigation */}
+      <nav className="relative z-20 px-6 py-6">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg group-hover:shadow-primary/30 transition-all duration-300">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M2 17L12 22L22 17" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M2 12L12 17L22 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+            <span className="text-xl font-bold bg-gradient-to-r from-white to-text-secondary bg-clip-text text-transparent">
+              As Foretold Labs
+            </span>
+          </Link>
+
+          <div className="hidden md:flex items-center gap-8">
+            <Link href="#products" className="text-sm font-medium text-muted hover:text-primary transition-colors">Products</Link>
+            <Link href="#research" className="text-sm font-medium text-muted hover:text-primary transition-colors">Research</Link>
+            <Link href="/about" className="text-sm font-medium text-muted hover:text-primary transition-colors">About</Link>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <Link href="#research" className="hidden md:block text-sm font-medium text-muted hover:text-primary transition-colors">Explore Research</Link>
+            <Link href="/products/augur" className="btn btn-primary text-sm">Get Started</Link>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="relative z-10 min-h-screen flex items-center justify-center px-6 py-24">
+        <div className="max-w-5xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8 animate-float">
+            <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+            <span className="text-xs font-medium text-primary tracking-wider uppercase">Innovating at the Edge</span>
+          </div>
+
+          <h1 className="mb-6">
+            We build{" "}
+            <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent animate-gradient">
+              intelligent systems
+            </span>{" "}
+            at the intersection of simulation, automation, and human-computer interaction.
+          </h1>
+
+          <p className="max-w-2xl mx-auto mb-10 text-lg text-muted leading-relaxed">
+            Pioneering next-generation technologies that bridge artificial intelligence with practical enterprise solutions. 
+            From compliance automation to clinical simulation, we're shaping the future of intelligent systems.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-4 mb-16">
+            <Link href="/products/augur" className="btn btn-primary">
+              View Our Products
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              </svg>
+            </Link>
+            <Link href="#research" className="btn btn-secondary">
+              Explore Research
+            </Link>
+          </div>
+
+          {/* Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+            {stats.map((stat, idx) => (
+              <div key={idx} className="card p-6 text-center">
+                <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-1">
+                  {stat.value}
+                </p>
+                <p className="text-sm text-muted uppercase tracking-wider">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Products Section */}
+      <section id="products" className="relative z-10 py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold tracking-wide uppercase mb-4">
+              Our Products
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Powerful Tools for Modern Challenges</h2>
+            <p className="text-lg text-muted max-w-2xl mx-auto">
+              Cutting-edge solutions built with industry-leading technologies and designed for real-world impact.
             </p>
-            <div className="mt-12 flex flex-wrap gap-4 animate-fade-in-up delay-200">
-              <Link href="/products/augur" className="chip chip--solid group">View products →</Link>
-              <Link href="#research" className="chip">Research areas</Link>
-            </div>
           </div>
-          
-          {/* Right: Empty negative space - lets the type breathe */}
-          <div className="md:col-span-5 md:h-[40vh] md:min-h-[30vh]"></div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {products.map((product, idx) => (
+              <div key={idx} className="card-gradient gradient-border group relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-primary/10 transition-all duration-500" />
+                
+                <div className="relative p-8">
+                  <div className="mb-6 p-4 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 inline-flex">
+                    {product.icon}
+                  </div>
+
+                  <h3 className="text-3xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">
+                    {product.title}
+                  </h3>
+                  <p className="text-primary/70 text-sm uppercase tracking-wider mb-4">{product.category}</p>
+                  
+                  <p className="text-muted leading-relaxed mb-6 max-w-xl">
+                    {product.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {product.tags.map((tag) => (
+                      <span key={tag} className="px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-medium">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <Link href={product.href} className="absolute inset-0" aria-label={`Learn more about ${product.title}`} />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Marquee band - subtle motion, not overwhelming */}
-      <section className="my-8 border-y border-[var(--line-soft)] bg-black/50 backdrop-blur-sm relative overflow-hidden">
-        <div className="marquee gap-16 overflow-hidden py-4">
-          {[0, 1].map((dup) => (
-            <div key={dup} className="flex shrink-0 items-center gap-12 md:gap-16 pr-12 md:pr-20" aria-hidden={dup === 1}>
-              <span className="display whitespace-nowrap text-lg md:text-xl uppercase tracking-[0.2em] text-white/20 md:text-3xl">Simulation</span>
-              <span className="display whitespace-nowrap text-lg md:text-xl uppercase tracking-[0.2em] text-white/20 md:text-3xl">Automation</span>
-              <span className="display whitespace-nowrap text-lg md:text-xl uppercase tracking-[0.2em] text-[var(--accent)] md:text-3xl">Human-Computer Interaction</span>
-              <span className="display whitespace-nowrap text-lg md:text-xl uppercase tracking-[0.2em] text-white/20 md:text-3xl">Research Systems</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Stats strip - data-led, minimal */}
-      <section className="mb-16 mt-4 px-6 md:px-12">
-        <div className="grid grid-cols-2 gap-px border-y border-[var(--line-soft)] bg-[var(--panel)] md:grid-cols-4 max-w-[1400px] mx-auto">
-          {stats.map((s) => (
-            <div key={s.label} className="border-r border-[var(--line-soft)] px-6 md:px-8 py-8 last:border-r-0 group hover:bg-[var(--panel-hover)] transition-colors cursor-default">
-              <p className="display text-2xl md:text-4xl text-white md:text-5xl tracking-tight group-hover:scale-105 transition-transform">{s.value}</p>
-              <p className="mt-2 break-words font-mono text-xs uppercase tracking-[0.2em] text-white/60">
-                {s.label}
+      {/* Research Section */}
+      <section id="research" className="relative z-10 py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row gap-12 items-start mb-16">
+            <div className="md:w-1/3">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-semibold tracking-wide uppercase mb-4">
+                Innovation Lab
+              </span>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">Areas of Exploration</h2>
+              <p className="text-muted leading-relaxed max-w-xl">
+                Our research team pushes the boundaries of what's possible in artificial intelligence and simulation technologies.
               </p>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Products - asymmetrical bento layout */}
-      <section id="products" className="mb-24 px-6 md:px-12 max-w-[1400px] mx-auto">
-        {/* Section header - left-aligned, not centered */}
-        <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between mb-12">
-          <div className="min-w-0">
-            <span className="eyebrow">// Workload</span>
-            <h2 className="display mt-6 text-5xl md:text-7xl tracking-tight">PRODUCTS IN FOCUS</h2>
+            
+            <div className="flex-shrink-0 w-full md:w-auto">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-3xl blur opacity-25" />
+                <div className="relative grid grid-cols-2 gap-4">
+                  <div className="card p-6 text-center">
+                    <span className="text-3xl font-bold text-primary mb-1">40+</span>
+                    <p className="text-sm text-muted">Research Papers</p>
+                  </div>
+                  <div className="card p-6 text-center">
+                    <span className="text-3xl font-bold text-secondary mb-1">25+</span>
+                    <p className="text-sm text-muted">Patents Filed</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <p className="body-copy max-w-md shrink-0 text-base md:text-lg leading-relaxed opacity-80">
-            Two active product surfaces, both framed as modern operational tools rather than marketing pages.
-          </p>
-        </div>
 
-        {/* Product 1 - Augur */}
-        <div className="group mb-8">
-          <a href={products[0].href} className="block relative overflow-hidden rounded-2xl bg-[var(--panel)] border border-[var(--line)] hover:border-[var(--accent)/0.5] transition-colors duration-500">
-            {/* Subtle hover gradient */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-transparent via-accent/3 to-transparent pointer-events-none"></div>
-
-            <div className="p-8 md:p-12 relative">
-              <span className="eyebrow mb-4 text-lg tracking-widest opacity-60">{products[0].index}</span>
-              
-              <div className="mb-5">
-                <h3 className="display flex items-center gap-3 group-hover:text-[var(--accent)] transition-colors">
-                  {products[0].title}
-                  {/* Decorative underline */}
-                  <span className="inline-flex h-[1px] w-14 bg-accent/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+          <div className="grid md:grid-cols-3 gap-6">
+            {researchAreas.map((area, idx) => (
+              <article key={idx} className="card hover:bg-gradient-to-br from-bg-card to-bg-secondary transition-all duration-300 group">
+                <div className="mb-4 p-3 rounded-xl bg-primary/10 text-primary inline-flex w-fit group-hover:scale-110 transition-transform duration-300">
+                  {area.icon}
+                </div>
+                
+                <h3 className={`text-xl font-bold mb-3 ${area.isFeatured ? 'text-primary' : ''} group-hover:text-primary transition-colors`}>
+                  {area.title}
                 </h3>
-                <p className="font-mono text-xs uppercase tracking-[0.2em] text-white/70">{products[0].category}</p>
-              </div>
+                
+                <p className="text-muted leading-relaxed text-sm">
+                  {area.description}
+                </p>
 
-              <p className="mb-8 body-copy max-w-xl leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity duration-300">
-                {products[0].description}
-              </p>
-
-              <div className="flex flex-wrap gap-2.5">
-                {products[0].tags.map((tag) => (
-                  <span key={tag} className="px-3 py-1 rounded-full bg-[var(--line)] font-mono text-xs uppercase tracking-wide opacity-70 hover:opacity-100 cursor-default transition-opacity">
-                    {tag}
+                {area.isFeatured && (
+                  <span className="mt-4 inline-block px-3 py-1 rounded-full bg-gradient-to-r from-primary to-secondary text-xs font-semibold tracking-wide uppercase text-white">
+                    Featured Research
                   </span>
-                ))}
-              </div>
-            </div>
-          </a>
-        </div>
-
-        {/* Product 2 - DokSim */}
-        <div className="group">
-          <a href={products[1].href} className="block relative overflow-hidden rounded-2xl bg-[var(--panel)] border border-[var(--line)] hover:border-[var(--accent)/0.5] transition-colors duration-500">
-            {/* Subtle hover gradient */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-transparent via-accent/3 to-transparent pointer-events-none"></div>
-
-            <div className="p-8 md:p-12 relative">
-              <span className="eyebrow mb-4 text-lg tracking-widest opacity-60">{products[1].index}</span>
-              
-              <div className="mb-5">
-                <h3 className="display flex items-center gap-3 group-hover:text-[var(--accent)] transition-colors">
-                  {products[1].title}
-                  {/* Decorative underline */}
-                  <span className="inline-flex h-[1px] w-14 bg-accent/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                </h3>
-                <p className="font-mono text-xs uppercase tracking-[0.2em] text-white/70">{products[1].category}</p>
-              </div>
-
-              <p className="mb-8 body-copy max-w-xl leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity duration-300">
-                {products[1].description}
-              </p>
-
-              <div className="flex flex-wrap gap-2.5">
-                {products[1].tags.map((tag) => (
-                  <span key={tag} className="px-3 py-1 rounded-full bg-[var(--line)] font-mono text-xs uppercase tracking-wide opacity-70 hover:opacity-100 cursor-default transition-opacity">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </a>
-        </div>
-
-      </section>
-
-      {/* Research grid - editorial asymmetry */}
-      <section id="research" className="mb-24 px-6 md:px-12 max-w-[1400px] mx-auto">
-        {/* Section accent glow - subtle */}
-        <div className="absolute right-0 top-0 h-full w-[15rem] bg-gradient-to-l from-accent/3 to-transparent pointer-events-none"></div>
-
-        <span className="eyebrow">// Exploration</span>
-        <h2 className="display mt-6 text-5xl md:text-7xl tracking-tight">AREAS OF EXPLORATION</h2>
-
-        <div className="mt-12 grid grid-cols-1 gap-px border-y border-[var(--line)] bg-[var(--panel)] md:grid-cols-2 lg:grid-cols-3 max-h-[600px] overflow-y-auto custom-scrollbar">
-          {researchAreas.map((area, idx) => (
-            <article key={idx} className="min-h-[220px] md:min-h-[280px] border-b border-[var(--line)] last:border-b-0 p-6 md:p-10 group hover:bg-[var(--panel-hover)] transition-colors relative">
-              {/* Corner accent line */}
-              <div className="absolute bottom-0 left-0 h-[3px] w-0 bg-accent/70 group-hover:w-full transition-all duration-500 ease-out"></div>
-
-              <h3 className={`display mb-4 leading-none ${area.isAI ? 'text-white' : 'text-white/90'} group-hover:text-[var(--accent)] transition-colors duration-300`}>
-                {area.title}
-              </h3>
-              <p className="body-copy text-sm leading-relaxed opacity-75 max-w-xl group-hover:opacity-90 transition-opacity duration-300">
-                {area.description}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* CTA - minimal, not overwhelming */}
-      <section className="py-24 md:py-32 px-6 md:px-12 relative overflow-hidden">
-        {/* Accent background glow - subtle, restrained */}
-        <div className="absolute bottom-0 right-0 h-[25rem] w-[25rem] bg-accent/3 blur-[120px] rounded-full pointer-events-none"></div>
-
-        <div className="max-w-[1400px] mx-auto">
-          <span className="eyebrow">// Connect</span>
-          <h2 className="display mt-6 text-5xl md:text-7xl tracking-tight">WANT TO WORK TOGETHER?</h2>
-          <p className="mt-8 body-copy max-w-xl leading-relaxed opacity-75">
-            We&apos;re always exploring new partnerships and technical challenges. Let us know what you&apos;re building.
-          </p>
-          <div className="mt-12 flex justify-end gap-4">
-            <Link href="/contact" className="chip chip--solid group">Get in touch →</Link>
-            <Link href="/products/augur" className="chip">View products</Link>
+                )}
+              </article>
+            ))}
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <section className="relative z-10 py-24 px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="card-gradient relative overflow-hidden p-12 md:p-16 text-center">
+            {/* Animated background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/5 opacity-50" />
+            
+            <div className="relative z-10">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-primary/20 text-primary text-sm font-semibold tracking-wide uppercase mb-6">
+                Let's Collaborate
+              </span>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Transform Your Business?</h2>
+              <p className="text-lg text-muted max-w-2xl mx-auto mb-10">
+                We're always exploring new partnerships and technical challenges. Let's discuss how we can help you achieve your goals.
+              </p>
+              
+              <div className="flex flex-wrap justify-center gap-4">
+                <Link href="/contact" className="btn btn-primary gradient-border">
+                  Get in Touch
+                </Link>
+                <Link href="#products" className="btn btn-secondary">
+                  View All Products
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="relative z-10 py-12 px-6 border-t border-line">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+            <span className="text-xl font-bold text-primary">As Foretold Labs</span>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-8 text-sm text-muted">
+            <Link href="#products" className="hover:text-primary transition-colors">Products</Link>
+            <Link href="#research" className="hover:text-primary transition-colors">Research</Link>
+            <Link href="/about" className="hover:text-primary transition-colors">About</Link>
+            <Link href="/contact" className="hover:text-primary transition-colors">Contact</Link>
+          </div>
+
+          <div className="flex items-center gap-6 text-sm text-muted">
+            <span className="text-muted">&copy; 2024 As Foretold Labs</span>
+            <a href="/privacy" className="hover:text-primary transition-colors">Privacy</a>
+            <a href="/terms" className="hover:text-primary transition-colors">Terms</a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
