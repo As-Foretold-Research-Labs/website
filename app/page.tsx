@@ -147,7 +147,7 @@ export default function Home() {
       </div>
 
       {/* Navigation */}
-      <nav className="relative z-20 px-6 py-6">
+      <nav className="relative z-20 px-6 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 group">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg group-hover:shadow-primary/30 transition-all duration-300">
@@ -183,7 +183,7 @@ export default function Home() {
             <span className="text-xs font-medium text-primary tracking-wider uppercase">Innovating at the Edge</span>
           </div>
 
-          <h1 className="mb-6">
+          <h1 className="mb-8">
             We build{" "}
             <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent animate-gradient">
               intelligent systems
@@ -191,7 +191,7 @@ export default function Home() {
             at the intersection of simulation, automation, and human-computer interaction.
           </h1>
 
-          <p className="max-w-2xl mx-auto mb-10 text-lg text-muted leading-relaxed">
+          <p className="max-w-3xl mx-auto mb-12 text-lg text-muted leading-relaxed">
             Pioneering next-generation technologies that bridge artificial intelligence with practical enterprise solutions. 
             From compliance automation to clinical simulation, we&apos;re shaping the future of intelligent systems.
           </p>
