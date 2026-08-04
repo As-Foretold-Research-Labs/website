@@ -4,6 +4,7 @@ const products = [
   {
     title: "Augur",
     category: "Governance Automation",
+    href: "/products/augur",
     description: "AI-powered compliance automation that maps security findings to SOC 2 and ISO 27001 controls automatically.",
     tags: ["C# / .NET 10", "Blazor", "EF Core", "OpenAPI 3.1.1"],
     icon: (
@@ -17,6 +18,7 @@ const products = [
   {
     title: "DokSim",
     category: "Clinical Training Simulation",
+    href: "/products/doksim",
     description: "Advanced patient communication simulator with intelligent LLM evaluation and safe branching for medical training.",
     tags: ["Python 3.11", "LangGraph", "Chroma", "FastAPI"],
     icon: (
@@ -97,6 +99,43 @@ const researchAreas = [
   },
 ];
 
+interface ProductLinkProps {
+  product: typeof products[0];
+}
+
+function ProductLink({ product }: ProductLinkProps) {
+  return (
+    <div className="card-gradient gradient-border group relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-primary/10 transition-all duration-500" />
+      
+      <div className="relative p-8">
+        <div className="mb-6 p-4 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 inline-flex">
+          {product.icon}
+        </div>
+
+        <h3 className="text-3xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">
+          {product.title}
+        </h3>
+        <p className="text-primary/70 text-sm uppercase tracking-wider mb-4">{product.category}</p>
+        
+        <p className="text-muted leading-relaxed mb-6 max-w-xl">
+          {product.description}
+        </p>
+
+        <div className="flex flex-wrap gap-2">
+          {product.tags.map((tag) => (
+            <span key={tag} className="px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-medium">
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <Link href={product.href} className="absolute inset-0" aria-label={`Learn more about ${product.title}`} />
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <div className="gradient-bg min-h-screen">
@@ -154,7 +193,7 @@ export default function Home() {
 
           <p className="max-w-2xl mx-auto mb-10 text-lg text-muted leading-relaxed">
             Pioneering next-generation technologies that bridge artificial intelligence with practical enterprise solutions. 
-            From compliance automation to clinical simulation, we're shaping the future of intelligent systems.
+            From compliance automation to clinical simulation, we&apos;re shaping the future of intelligent systems.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mb-16">
@@ -198,34 +237,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {products.map((product, idx) => (
-              <div key={idx} className="card-gradient gradient-border group relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-primary/10 transition-all duration-500" />
-                
-                <div className="relative p-8">
-                  <div className="mb-6 p-4 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 inline-flex">
-                    {product.icon}
-                  </div>
-
-                  <h3 className="text-3xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">
-                    {product.title}
-                  </h3>
-                  <p className="text-primary/70 text-sm uppercase tracking-wider mb-4">{product.category}</p>
-                  
-                  <p className="text-muted leading-relaxed mb-6 max-w-xl">
-                    {product.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2">
-                    {product.tags.map((tag) => (
-                      <span key={tag} className="px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-medium">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <Link href={product.href} className="absolute inset-0" aria-label={`Learn more about ${product.title}`} />
-                </div>
-              </div>
+              <ProductLink key={idx} product={product} />
             ))}
           </div>
         </div>
@@ -241,7 +253,7 @@ export default function Home() {
               </span>
               <h2 className="text-4xl md:text-5xl font-bold mb-4">Areas of Exploration</h2>
               <p className="text-muted leading-relaxed max-w-xl">
-                Our research team pushes the boundaries of what's possible in artificial intelligence and simulation technologies.
+                Our research team pushes the boundaries of what&apos;s possible in artificial intelligence and simulation technologies.
               </p>
             </div>
             
@@ -297,11 +309,11 @@ export default function Home() {
             
             <div className="relative z-10">
               <span className="inline-block px-4 py-1.5 rounded-full bg-primary/20 text-primary text-sm font-semibold tracking-wide uppercase mb-6">
-                Let's Collaborate
+                Let&apos;s Collaborate
               </span>
               <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Transform Your Business?</h2>
               <p className="text-lg text-muted max-w-2xl mx-auto mb-10">
-                We're always exploring new partnerships and technical challenges. Let's discuss how we can help you achieve your goals.
+                We&apos;re always exploring new partnerships and technical challenges. Let&apos;s discuss how we can help you achieve your goals.
               </p>
               
               <div className="flex flex-wrap justify-center gap-4">
