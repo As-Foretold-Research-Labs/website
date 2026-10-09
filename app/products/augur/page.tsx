@@ -634,7 +634,7 @@ export default function AugurProductPage() {
                     <textarea className="w-full bg-surface border border-surface-border px-3.5 py-2.5 text-white font-body text-sm focus:border-cobalt-light focus:ring-0 outline-none transition" placeholder="Specify relevant frameworks (SOC 2 Type II, ISO 27001, FedRAMP High, EU AI Act) and active audit horizon..." rows={3} />
                   </div>
                   <div className="pt-2">
-                    <button className="w-full py-3.5 bg-white hover:bg-neutral-200 text-obsidian font-mono text-xs font-medium tracking-wider uppercase transition-colors" type="submit">
+                    <button className="w-full py-3.5 btn-black text-xs font-medium tracking-wider uppercase" type="submit">
                       Submit Institutional Assessment Request →
                     </button>
                     <p className="text-center font-mono text-[11px] text-dim mt-3">

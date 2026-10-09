@@ -222,7 +222,7 @@ export default function IntelligencePage() {
               </p>
               <form className="flex flex-col sm:flex-row gap-3 max-w-xl">
                 <input className="flex-grow px-4 py-3 bg-obsidian border border-surface-border text-white placeholder:text-dim text-xs font-mono focus:outline-none focus:border-steel transition-colors" placeholder="institutional.email@organization.domain" required type="email" />
-                <button className="px-6 py-3 bg-white hover:bg-neutral-200 text-obsidian text-xs font-mono uppercase tracking-wider font-semibold transition-colors shrink-0" type="submit">
+                <button className="btn-black px-6 py-3 text-xs font-mono uppercase tracking-wider font-semibold" type="submit">
                   Request Access
                 </button>
               </form>

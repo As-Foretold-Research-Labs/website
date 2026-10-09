@@ -145,6 +145,19 @@ p {
   color: var(--text-primary);
 }
 
+/* Black button variant - for primary actions on dark backgrounds */
+.btn-black {
+  background: var(--obsidian);
+  color: var(--text-primary);
+  border-color: var(--surface-border);
+}
+
+.btn-black:hover {
+  background: var(--surface);
+  border-color: var(--surface-border-strong);
+  transform: translateY(-1px);
+}
+
 /* Card styles - Framework clean modular cards */
 .card {
   background: var(--surface-card);

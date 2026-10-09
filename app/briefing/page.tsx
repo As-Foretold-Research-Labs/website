@@ -186,7 +186,7 @@ export default function BriefingPage() {
                   </label>
                 </div>
                 <div className="pt-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                  <button className="inline-flex items-center justify-center space-x-2 px-6 py-3 bg-white hover:bg-neutral-200 text-obsidian font-mono text-xs uppercase tracking-wider font-semibold transition-colors" type="submit">
+                  <button className="btn-black px-6 py-3 text-xs font-mono font-semibold tracking-widest uppercase" type="submit">
                     <span>Submit Institutional Briefing Request</span>
                     <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
                   </button>

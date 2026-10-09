@@ -90,7 +90,7 @@ export default function InformationWarfareArticle() {
           <Link className="text-xs font-mono text-dim hover:text-white transition-colors" href="/intelligence">
             ← Back to Intelligence Briefings
           </Link>
-          <Link className="inline-flex items-center gap-2 px-4 py-2 bg-white text-obsidian text-xs font-mono uppercase tracking-wider hover:bg-neutral-200 transition-colors" href="/briefing">
+          <Link className="btn-black px-4 py-2 text-xs font-mono uppercase tracking-wider" href="/briefing">
             Request Full Briefing Access
           </Link>
         </footer>

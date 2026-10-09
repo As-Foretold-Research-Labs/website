@@ -163,13 +163,13 @@ export default function Home() {
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-wrap items-center gap-4">
-            <Link
-              className="inline-flex items-center justify-center px-6 py-3.5 bg-white text-obsidian text-xs font-mono font-semibold tracking-widest uppercase hover:bg-neutral-200 transition-colors"
-              href="#briefing"
-            >
-              Deploy Mission Architecture
-            </Link>
+                    <div className="flex flex-wrap items-center gap-4">
+                      <Link
+                        className="btn-black px-6 py-3.5 text-xs font-mono font-semibold tracking-widest uppercase"
+                        href="#briefing"
+                      >
+                        Deploy Mission Architecture
+                      </Link>
             <Link
               className="inline-flex items-center gap-2 px-6 py-3.5 border border-surface-border bg-surface-card hover:border-white/30 text-white text-xs font-mono tracking-widest uppercase transition-colors"
               href="#platforms"
@@ -380,11 +380,11 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-obsidian text-xs font-mono font-semibold tracking-widest uppercase hover:bg-neutral-200 transition-colors"
-              href="mailto:velasquez.marcvictor.l@asforetold.space?subject=Request%20Institutional%20Briefing"
-            >
-              Request Institutional Briefing
-            </Link>
+                          className="btn-black px-8 py-4 text-xs font-mono font-semibold tracking-widest uppercase"
+                          href="mailto:velasquez.marcvictor.l@asforetold.space?subject=Request%20Institutional%20Briefing"
+                        >
+                          Request Institutional Briefing
+                        </Link>
             <Link
               className="inline-flex items-center justify-center px-8 py-4 border border-surface-border bg-obsidian text-white text-xs font-mono tracking-widest uppercase hover:border-white/30 transition-colors"
               href="#platforms"

@@ -76,11 +76,11 @@ export default function Navbar() {
           </div>
           {/* Primary button CTA */}
           <Link
-            className="inline-flex items-center text-xs font-mono tracking-widest uppercase px-4 py-2 border border-white bg-white text-obsidian hover:bg-neutral-200 transition-all duration-200 font-semibold"
-            href="#briefing"
-          >
-            REQUEST BRIEFING
-          </Link>
+                      className="btn-black text-xs font-mono tracking-widest uppercase px-4 py-2"
+                      href="#briefing"
+                    >
+                      REQUEST BRIEFING
+                    </Link>
 
           {/* Mobile menu trigger */}
           <button
