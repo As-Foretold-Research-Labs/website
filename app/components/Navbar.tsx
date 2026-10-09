@@ -28,203 +28,96 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-zinc-800/80 bg-[#0c0d10]/90 backdrop-blur-xl">
-      <nav className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-3.5">
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-8 h-8 rounded-lg bg-[#ff6000] flex items-center justify-center p-1.5 shadow-md transition-all duration-200 group-hover:bg-[#e05300]">
-            <Image
-              src="/as-foretold-logo-adaptive.svg"
-              alt="As Foretold Labs logo"
-              width={22}
-              height={22}
-              className="text-white invert"
-              referrerPolicy="no-referrer"
-            />
-          </div>
-          <span className="text-base font-bold text-white tracking-tight">
-            As Foretold Labs
-          </span>
-        </Link>
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-surface-border bg-obsidian/90 backdrop-blur-md">
+      <nav className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 lg:px-10 h-16">
+        {/* Brand Mark & System Tier */}
+        <div className="flex items-center gap-4">
+          <Link className="flex items-center gap-3 group" href="/">
+            <div className="w-4 h-4 border border-white flex items-center justify-center transition-transform group-hover:rotate-45 duration-300">
+              <div className="w-1.5 h-1.5 bg-white" />
+            </div>
+            <span className="text-xs md:text-sm font-semibold tracking-tight uppercase text-white font-display hidden sm:inline">
+              AS FORETOLD LABS
+            </span>
+            <span className="hidden lg:inline-block text-[10px] tracking-widest text-steel uppercase font-mono pl-3 border-l border-surface-border/60">
+              / SOVEREIGN INTELLIGENCE
+            </span>
+          </Link>
+        </div>
 
-        {/* Desktop Links */}
+        {/* Primary Navigation Links */}
         <div className="hidden items-center gap-8 md:flex">
-          {/* Products Dropdown Container */}
-          <div 
-            className="relative group"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+          <Link
+            href="/#platforms"
+            className="text-steel hover:text-white transition-colors text-xs font-mono tracking-widest uppercase"
           >
-            <div className="flex items-center gap-1 py-2">
-              <Link
-                href="/#products"
-                className="text-sm font-medium text-zinc-300 group-hover:text-[#ff6000] hover:text-[#ff6000] transition-colors flex items-center gap-1.5"
-                onClick={() => setProductsOpen(false)}
-              >
-                Products
-              </Link>
-              <button
-                type="button"
-                onClick={() => setProductsOpen((prev) => !prev)}
-                className="text-zinc-400 group-hover:text-[#ff6000] hover:text-[#ff6000] transition-colors focus:outline-none"
-                aria-label="Toggle Products dropdown"
-              >
-                <svg
-                  width="12"
-                  height="12"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  className={`transition-transform duration-200 group-hover:rotate-180 ${productsOpen ? "rotate-180 text-[#ff6000]" : ""}`}
-                >
-                  <path d="M6 9l6 6 6-6" />
-                </svg>
-              </button>
-            </div>
+            Platforms
+          </Link>
+          <Link
+            href="/#intelligence"
+            className="text-steel hover:text-white transition-colors text-xs font-mono tracking-widest uppercase"
+          >
+            Intelligence
+          </Link>
+          <Link
+            href="/#capabilities"
+            className="text-steel hover:text-white transition-colors text-xs font-mono tracking-widest uppercase"
+          >
+            Doctrine
+          </Link>
+        </div>
 
-            {/* Dropdown Menu - always rendered in DOM, revealed on hover or click */}
-            <div 
-              className={`absolute top-full left-0 pt-1.5 w-72 z-50 transition-all duration-150 ${
-                productsOpen 
-                  ? "opacity-100 visible pointer-events-auto translate-y-0" 
-                  : "opacity-0 invisible pointer-events-none -translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto group-hover:translate-y-0"
-              }`}
-            >
-              <div className="rounded-xl border border-zinc-800 bg-[#14161b] p-2.5 shadow-2xl backdrop-blur-2xl">
-                <div className="px-3 py-1.5 text-[10px] font-mono uppercase tracking-wider text-zinc-500 font-semibold">
-                  Lab Systems
-                </div>
-
-                <Link
-                  href="/products/augur"
-                  onClick={() => setProductsOpen(false)}
-                  className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-zinc-800/70 transition-colors group/item"
-                >
-                  <div className="w-8 h-8 rounded-md bg-[#ff6000]/10 border border-[#ff6000]/20 flex items-center justify-center shrink-0 mt-0.5 group-hover/item:border-[#ff6000]/40">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff7722" strokeWidth="2">
-                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2 font-semibold text-sm text-zinc-100 group-hover/item:text-[#ff6000]">
-                      Augur
-                      <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-[#ff6000]/10 text-[#ff7722] border border-[#ff6000]/20">.NET 10</span>
-                    </div>
-                    <span className="text-xs text-zinc-400 mt-0.5 block leading-snug">
-                      SOC 2 & ISO compliance automation
-                    </span>
-                  </div>
-                </Link>
-
-                <Link
-                  href="/products/doksim"
-                  onClick={() => setProductsOpen(false)}
-                  className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-zinc-800/70 transition-colors group/item mt-1"
-                >
-                  <div className="w-8 h-8 rounded-md bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0 mt-0.5 group-hover/item:border-emerald-500/40">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" strokeWidth="2">
-                      <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2 font-semibold text-sm text-zinc-100 group-hover/item:text-[#ff6000]">
-                      DokSim
-                      <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">LangGraph</span>
-                    </div>
-                    <span className="text-xs text-zinc-400 mt-0.5 block leading-snug">
-                      Clinical patient communication simulator
-                    </span>
-                  </div>
-                </Link>
-
-                <div className="mt-2 pt-2 border-t border-zinc-800/80 px-2">
-                  <Link
-                    href="/#products"
-                    onClick={() => setProductsOpen(false)}
-                    className="flex items-center justify-between text-xs font-mono font-medium text-zinc-400 hover:text-[#ff6000] py-1 transition-colors"
-                  >
-                    View All Products
-                    <span>&rarr;</span>
-                  </Link>
-                </div>
-              </div>
-            </div>
+        {/* Right Side Telemetry Indicator & Action CTA */}
+        <div className="flex items-center gap-4">
+          {/* System / Security status pill */}
+          <div className="hidden sm:inline-flex items-center gap-2 font-mono text-[10px] tracking-wider text-steel border border-surface-border bg-surface px-2.5 py-1">
+            <span className="w-1.5 h-1.5 bg-emerald-400" />
+            <span>SYS_STATUS: AIR-GAPPED // OPERATIONAL</span>
           </div>
-
+          {/* Primary button CTA */}
           <Link
-            href="/#research"
-            className="text-sm font-medium text-zinc-300 hover:text-[#ff6000] transition-colors"
+            className="inline-flex items-center text-xs font-mono tracking-widest uppercase px-4 py-2 border border-white bg-white text-obsidian hover:bg-neutral-200 transition-all duration-200 font-semibold"
+            href="#briefing"
           >
-            Research
+            REQUEST BRIEFING
           </Link>
 
-          <Link
-            href="/blog"
-            className="text-sm font-medium text-zinc-300 hover:text-[#ff6000] transition-colors"
+          {/* Mobile menu trigger */}
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
+            className="p-2 rounded text-steel hover:bg-surface hover:text-white md:hidden"
           >
-            Blog
-          </Link>
-
-          <Link
-            href="/about"
-            className="text-sm font-medium text-zinc-300 hover:text-[#ff6000] transition-colors"
-          >
-            About
-          </Link>
-
-          <Link
-            href="/contact"
-            className="text-sm font-medium text-zinc-300 hover:text-[#ff6000] transition-colors"
-          >
-            Contact
-          </Link>
+            {mobileOpen ? (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
         </div>
-
-        {/* Desktop CTA */}
-        <div className="hidden items-center gap-4 md:flex">
-          <Link
-            href="/products/augur"
-            className="btn btn-primary text-xs py-2 px-4 shadow-sm"
-          >
-            Explore Augur
-          </Link>
-        </div>
-
-        {/* Mobile menu trigger */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-          className="p-2 rounded-lg text-zinc-300 hover:bg-zinc-800 md:hidden"
-        >
-          {mobileOpen ? (
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M18 6L6 18M6 6l12 12" />
-            </svg>
-          ) : (
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          )}
-        </button>
       </nav>
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="border-t border-zinc-800 px-6 py-6 bg-[#0c0d10]/95 backdrop-blur-2xl md:hidden">
+        <div className="border-t border-surface-border px-6 py-6 bg-obsidian/95 backdrop-blur-2xl md:hidden">
           <div className="flex flex-col gap-2">
             {/* Products Collapsible Group */}
             <div>
               <div className="flex items-center justify-between w-full py-2 px-3 text-sm font-medium text-zinc-200">
                 <Link
-                  href="/#products"
+                  href="/#platforms"
                   onClick={() => setMobileOpen(false)}
-                  className="hover:text-[#ff6000] transition-colors"
+                  className="hover:text-cobalt-light transition-colors"
                 >
-                  Products
+                  Platforms
                 </Link>
                 <button
                   onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
-                  className="text-zinc-400 p-1"
+                  className="text-steel p-1"
                 >
                   <svg
                     width="14"
@@ -241,73 +134,77 @@ export default function Navbar() {
               </div>
 
               {mobileProductsOpen && (
-                <div className="ml-3 pl-3 border-l border-zinc-800 flex flex-col gap-2 my-1">
+                <div className="ml-3 pl-3 border-l border-surface-border flex flex-col gap-2 my-1">
                   <Link
                     href="/products/augur"
                     onClick={() => setMobileOpen(false)}
-                    className="flex items-center justify-between rounded-lg px-3 py-2 text-xs font-medium text-zinc-300 hover:bg-zinc-800/60 hover:text-[#ff6000] transition-colors"
+                    className="flex items-center justify-between rounded px-3 py-2 text-xs font-medium text-steel hover:bg-surface/60 hover:text-white transition-colors"
                   >
                     <span className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#ff6000]" />
-                      Augur Governance
+                      <span className="w-1.5 h-1.5 rounded-full bg-cobalt" />
+                      Augur
                     </span>
-                    <span className="font-mono text-[10px] text-zinc-500">SOC 2</span>
+                    <span className="font-mono text-[10px] text-dim">SOC 2 / ISO</span>
                   </Link>
 
                   <Link
                     href="/products/doksim"
                     onClick={() => setMobileOpen(false)}
-                    className="flex items-center justify-between rounded-lg px-3 py-2 text-xs font-medium text-zinc-300 hover:bg-zinc-800/60 hover:text-emerald-400 transition-colors"
+                    className="flex items-center justify-between rounded px-3 py-2 text-xs font-medium text-steel hover:bg-surface/60 hover:text-emerald-400 transition-colors"
                   >
                     <span className="flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                      DokSim Simulator
+                      DokSim
                     </span>
-                    <span className="font-mono text-[10px] text-zinc-500">Clinical</span>
+                    <span className="font-mono text-[10px] text-dim">CLINICAL</span>
+                  </Link>
+
+                  <Link
+                    href="/products/citytwin"
+                    onClick={() => setMobileOpen(false)}
+                    className="flex items-center justify-between rounded px-3 py-2 text-xs font-medium text-steel hover:bg-surface/60 hover:text-cobalt-light transition-colors"
+                  >
+                    <span className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-cobalt-light" />
+                      CityTwin
+                    </span>
+                    <span className="font-mono text-[10px] text-dim">SPATIAL</span>
                   </Link>
                 </div>
               )}
             </div>
 
             <Link
-              href="/#research"
+              href="/#intelligence"
               onClick={() => setMobileOpen(false)}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-zinc-200 hover:bg-zinc-800/60 hover:text-[#ff6000] transition-colors"
+              className="rounded px-3 py-2 text-sm font-medium text-steel hover:bg-surface/60 hover:text-white transition-colors"
             >
-              Research
+              Intelligence
             </Link>
 
             <Link
-              href="/blog"
+              href="/#capabilities"
               onClick={() => setMobileOpen(false)}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-zinc-200 hover:bg-zinc-800/60 hover:text-[#ff6000] transition-colors"
+              className="rounded px-3 py-2 text-sm font-medium text-steel hover:bg-surface/60 hover:text-white transition-colors"
             >
-              Blog
+              Doctrine
             </Link>
 
             <Link
-              href="/about"
+              href="/briefing"
               onClick={() => setMobileOpen(false)}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-zinc-200 hover:bg-zinc-800/60 hover:text-[#ff6000] transition-colors"
+              className="rounded px-3 py-2 text-sm font-medium text-steel hover:bg-surface/60 hover:text-white transition-colors"
             >
-              About
+              Briefing
             </Link>
 
-            <Link
-              href="/contact"
-              onClick={() => setMobileOpen(false)}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-zinc-200 hover:bg-zinc-800/60 hover:text-[#ff6000] transition-colors"
-            >
-              Contact
-            </Link>
-
-            <div className="pt-4 border-t border-zinc-800">
+            <div className="pt-4 border-t border-surface-border">
               <Link
-                href="/products/augur"
+                href="/briefing"
                 onClick={() => setMobileOpen(false)}
                 className="btn btn-primary w-full text-center text-xs py-2.5"
               >
-                Explore Augur
+                Request Briefing
               </Link>
             </div>
           </div>
@@ -316,4 +213,3 @@ export default function Navbar() {
     </header>
   );
 }
-

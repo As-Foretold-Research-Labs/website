@@ -8,332 +8,287 @@ const products = [
   {
     id: "augur",
     title: "Augur",
-    category: "Governance & Compliance Automation",
+    category: "Continuous Compliance & Sovereign Governance",
     href: "/products/augur",
-    description: "AI-powered governance and compliance automation system. Maps raw security findings, code commits, and vulnerability logs to SOC 2 Type II and ISO 27001 controls automatically with audit-ready documentation.",
-    tags: ["C# / .NET 10", "Blazor", "EF Core", "OpenAPI 3.1.1"],
+    description: "Autonomous governance architecture that translates dynamic codebases, infrastructure telemetry, and vulnerability vectors into continuous compliance verification. Replaces point-in-time manual audits with living institutional evidence.",
+    tags: ["C# / .NET 10", "Blazor Server", "EF Core", "OpenAPI 3.1.1"],
     image: "/augur-demo.gif",
     isGif: true,
-    badge: "SOC 2 & ISO 27001",
-    badgeColor: "bg-[#ff6000]/10 text-[#ff7722] border-[#ff6000]/25 font-mono",
+    badge: "SOC 2 / ISO 27001 / FedRAMP",
+    badgeColor: "badge-primary",
     features: [
-      "Automated Control Mapping",
-      "Real-time Audit Evidence Collector",
-      "OpenAPI 3.1.1 Integration Engine",
-      "C# .NET 10 Enterprise High-Performance Backend"
+      "Deterministic Control Cross-Mapping",
+      "Real-time Evidence Ingestion",
+      "Automated OpenAPI 3.1.1 Contract Validation",
+      "Cryptographic Ledger Anchoring"
     ]
   },
   {
     id: "doksim",
     title: "DokSim",
-    category: "Clinical Training & Patient Simulation",
+    category: "High-Stakes Clinical Validation Platform",
     href: "/products/doksim",
-    description: "Advanced patient communication simulator with intelligent LLM evaluation and safe agentic branching. Empowers medical students and clinical trainees to practice sensitive clinical interviews with real-time feedback.",
-    tags: ["Python 3.11", "LangGraph", "Chroma DB", "FastAPI"],
+    description: "Agentic simulation environments designed for clinical training, differential diagnosis stress-testing, and empathic interview evaluation under strict safety guardrails.",
+    tags: ["Python 3.11", "LangGraph", "ChromaDB RAG", "FastAPI"],
     image: "/doksim-dashboard.png",
     isGif: false,
-    badge: "Clinical AI",
-    badgeColor: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20 font-mono",
+    badge: "Clinical AI / HIPAA",
+    badgeColor: "badge-emerald",
     features: [
-      "LangGraph Agentic Dialogue Trees",
-      "Real-time Clinical Empathy Evaluation",
-      "Chroma Vector RAG Knowledge Retrieval",
-      "FastAPI Asynchronous Engine"
+      "Deterministic State Machines",
+      "Sub-16ms Vector Retrieval",
+      "12-Axis Empathy Rubrics",
+      "Zero Hallucination Protocols"
     ]
   },
+  {
+    id: "citytwin",
+    title: "CityTwin",
+    category: "Physics-Informed Spatial Simulation Engine",
+    href: "/products/citytwin",
+    description: "Zero-latency spatial environment synchronization for multi-agent robotics, urban logistics, and synthetic environment testing. Bridges physical sensor networks with deep learning surrogates.",
+    tags: ["CUDA / PyTorch", "WebGPU", "MARL", "ROS2 / OPC-UA"],
+    image: "/citytwin-hero.jpg",
+    isGif: false,
+    badge: "Spatial / FedRAMP Ready",
+    badgeColor: "badge-primary",
+    features: [
+      "Continuous PDE Solver Integration",
+      "Distributed MARL Execution",
+      "100k+ Telemetry Nodes",
+      "Hardware-in-the-Loop Validation"
+    ]
+  }
 ];
 
 const stats = [
-  { value: "2", label: "Active AI Systems" },
-  { value: "SOC 2 & ISO", label: "Governance Standards" },
-  { value: "LangGraph", label: "Agentic Framework" },
-  { value: "100%", label: "Audit Precision" },
+  { value: "3", label: "Mission Platforms" },
+  { value: "Continuous", label: "Assurance Model" },
+  { value: "Deterministic", label: "Agent Framework" },
+  { value: "Zero-Trust", label: "Data Perimeter" },
 ];
 
-const researchAreas = [
+const capabilities = [
   {
-    id: "digital-twin",
-    title: "Digital Twin Systems",
-    subtitle: "High-fidelity virtual modeling for predictive behavior and workflow optimization.",
-    description: "We develop physics-informed digital twins that synchronize real-time IoT sensors, operational logs, and machine state telemetry to simulate systemic disruptions before they manifest in physical operations.",
-    tags: ["IoT Simulation", "State Synchronization", "Predictive Analytics"],
+    id: 1,
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="3" width="20" height="14" rx="2"/>
-        <path d="M8 21v-4"/>
-        <path d="M16 21v-4"/>
-        <path d="M12 17v4"/>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M2 12h20" />
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
       </svg>
     ),
+    title: "Autonomous Defense & Systems Simulation",
+    description: "Constructing high-fidelity synthetic proving grounds for multi-agent autonomous assets. Generating edge cases and stress conditions impossible to replicate in physical test ranges safely.",
+    tags: ["Robotics Gym", "Spatial Twins", "MARL"]
   },
   {
-    id: "robotics-sim",
-    title: "Robotics & Agent Simulation",
-    subtitle: "Virtual training environments for autonomous agents in dynamic spaces.",
-    description: "Building scalable synthetic environments that train multi-agent reinforcement learning models for robotic navigation, spatial manipulation, and human-robot co-working safety protocols.",
-    tags: ["Synthetic Environments", "Multi-Agent RL", "Spatial AI"],
+    id: 2,
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2l3 4H9l3-4z"/>
-        <path d="M3 14c0-3.5 2.5-6.5 6-5.5 1.5.3 3 1 4.5 1s3-.7 4.5-1c3.5-1 6 2 6 5.5v6c0 1.1-.9 2-2 2H2c-1.1 0-2-.9-2-2v-6z"/>
-        <path d="M5 14v6"/>
-        <path d="M19 14v6"/>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        <path d="M9 12l2 2 4-4" />
       </svg>
     ),
+    title: "Institutional Governance & Threat Modeling",
+    description: "Architecting automated compliance rails that continuously measure software artifacts against security frameworks. Automated provenance, vulnerability verification, and audit evidence generation.",
+    tags: ["Sovereign Audit", "Zero Hallucination", "Continuous Proof"]
   },
   {
-    id: "osint",
-    title: "Open Source Intelligence (OSINT)",
-    subtitle: "Automated aggregation and signal extraction from public data streams.",
-    description: "Leveraging custom LLM reasoning pipelines to filter noise from massive open-source data streams, providing actionable security intelligence and geopolitical risk mapping.",
-    tags: ["Signal Extraction", "Risk Mapping", "Graph Analysis"],
+    id: 3,
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="11" cy="11" r="8"/>
-        <circle cx="21" cy="11" r="8"/>
-        <path d="M21 3v6l-6 3"/>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
       </svg>
     ),
+    title: "Clinical Decision & Empathic Validation",
+    description: "Deterministic LLM evaluation pipelines deployed within clinical decision loops. Balancing medical knowledge ontologies, emotional distress modeling, and human-in-the-loop validation metrics.",
+    tags: ["State Machines", "Vector Ontologies", "Licensing Metrics"]
+  },
+];
+
+const publications = [
+  {
+    slug: "/intelligence/kill-switch-era",
+    category: "Strategic Monograph",
+    date: "JUN 2026",
+    readTime: "18 Min",
+    title: "The Kill Switch Era: Sovereign Institutions and Local-First AI",
+    excerpt: "Analysis of frontier-model supply chains governed by sudden export embargoes and the institutional necessity of deploying open-weight models on air-gapped hardware enclaves."
   },
   {
-    id: "cybersecurity",
-    title: "Cybersecurity & Governance Automation",
-    subtitle: "Continuous automated compliance and defensive threat modeling.",
-    description: "Connecting security telemetry directly with compliance framework control objectives, eliminating manual audit preparation through continuous verification.",
-    tags: ["Automated SOC 2", "Threat Vector Modeling", "DevSecOps"],
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-        <path d="M9 12l2 2 4-4"/>
-      </svg>
-    ),
+    slug: "/intelligence/pax-silica",
+    category: "Geopolitical Systems",
+    date: "JUL 2026",
+    readTime: "12 Min",
+    title: "Pax Silica: Industrial Decarbonization and Sovereign Semiconductor Hubs",
+    excerpt: "Framework for sovereign compute host nations: why hosting AI data centers demands reciprocal sovereign control over domestic power and digital twin grids."
   },
   {
-    id: "ai-architectures",
-    title: "Agentic AI & LLM Evaluation",
-    subtitle: "Safe branching, deterministic guardrails, and real-time evaluation rubrics.",
-    description: "Designing agentic state machines using frameworks like LangGraph and Custom RAG to perform high-stakes tasks in clinical and compliance domains with zero hallucination tolerance.",
-    tags: ["LangGraph", "RAG Optimization", "Deterministic AI"],
-    isFeatured: true,
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="9"/>
-        <ellipse cx="12" cy="12" rx="9" ry="4"/>
-        <ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(60 12 12)"/>
-        <ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(120 12 12)"/>
-      </svg>
-    ),
-  },
+    slug: "/intelligence/canvas-breach",
+    category: "Operational Risk",
+    date: "JUN 2026",
+    readTime: "14 Min",
+    title: "The Canvas Incident: Educational Infrastructure as National Soft Targets",
+    excerpt: "Technical post-mortem on the 275-million-record exfiltration across 9,000 academic entities. Architectural audit of central database concentration vulnerabilities."
+  }
 ];
 
 export default function Home() {
-  const [activeResearch, setActiveResearch] = useState<string | null>(null);
-
   return (
-    <div className="relative min-h-screen bg-[#0c0d10] text-zinc-100 overflow-hidden w-full flex flex-col items-center">
+    <div className="relative min-h-screen bg-obsidian text-white overflow-hidden w-full flex flex-col items-center">
+      {/* Subtle Ambient Glow */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[1100px] h-[450px] bg-gradient-to-b from-blue-900/10 via-transparent to-transparent blur-[160px]" />
+        <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-blue-950/5 blur-[180px]" />
+      </div>
+
       {/* HERO SECTION */}
-      <section className="relative z-10 px-6 pt-16 pb-20 md:pt-24 md:pb-28 max-w-7xl mx-auto w-full">
-        <div className="text-center max-w-4xl mx-auto flex flex-col items-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-[#181a20] border border-zinc-800 text-[#ff7722] text-xs font-mono tracking-wider uppercase mb-8">
-            <span className="w-2 h-2 rounded-full bg-[#ff6000] animate-pulse" />
-            Pioneering Intelligent Systems
+      <section className="relative z-10 px-6 lg:px-12 pt-24 md:pt-36 pb-20 md:pb-28 max-w-7xl mx-auto w-full grid-pattern border-b border-surface-border">
+        <div className="max-w-4xl">
+          {/* Sovereign Tag */}
+          <div className="inline-flex items-center gap-2.5 px-2.5 py-1 mb-8 border border-surface-border bg-surface text-steel text-[11px] font-mono tracking-widest uppercase">
+            <span className="w-1.5 h-1.5 bg-cobalt-light" />
+            Operational Sovereignty • Simulation • Decision Superiority
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-6 leading-[1.15]">
-            We build <span className="text-[#ff6000]">intelligent systems</span> for simulation & enterprise automation.
+          {/* Editorial Headline */}
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-semibold tracking-tighter leading-[1.06] text-white mb-8">
+            Software for Critical Operations: Simulation, Governance, and Sovereign Intelligence.
           </h1>
 
-          <p className="text-lg md:text-xl text-zinc-400 leading-relaxed max-w-3xl mx-auto mb-10">
-            As Foretold Labs develops advanced governance automation and clinical training simulators.
-            Bridging state-of-the-art AI research with high-precision modular enterprise software.
+          {/* Executive Subtext */}
+          <p className="font-body text-lg sm:text-xl text-steel font-normal leading-relaxed max-w-3xl mb-12">
+            As Foretold Labs builds mission-grade platforms for autonomous decision-making, clinical validation, and continuous regulatory sovereignty. Engineered specifically for enterprise and institutional environments where failure is not an option.
           </p>
 
-          <div className="flex flex-wrap justify-center items-center gap-4 mb-16">
+          {/* CTAs */}
+          <div className="flex flex-wrap items-center gap-4">
             <Link
-              href="/products/augur"
-              className="btn btn-primary text-sm py-3 px-6 shadow-sm"
+              className="inline-flex items-center justify-center px-6 py-3.5 bg-white text-obsidian text-xs font-mono font-semibold tracking-widest uppercase hover:bg-neutral-200 transition-colors"
+              href="#briefing"
             >
-              Explore Augur
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
+              Deploy Mission Architecture
             </Link>
             <Link
-              href="/products/doksim"
-              className="btn btn-secondary text-sm py-3 px-6"
+              className="inline-flex items-center gap-2 px-6 py-3.5 border border-surface-border bg-surface-card hover:border-white/30 text-white text-xs font-mono tracking-widest uppercase transition-colors"
+              href="#platforms"
             >
-              Explore DokSim
+              <span>Examine Platforms</span>
+              <span className="material-symbols-outlined text-sm">arrow_forward</span>
             </Link>
             <Link
-              href="/about"
-              className="text-sm text-zinc-400 hover:text-white px-4 py-3 transition-colors"
+              className="text-xs font-mono tracking-wider text-steel hover:text-white px-3 py-3 transition-colors uppercase"
+              href="#capabilities"
             >
-              About the Lab &rarr;
+              Read Capabilities Brief →
             </Link>
           </div>
+        </div>
 
-          {/* STATS STRIP */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4 rounded-xl bg-[#14161b] border border-zinc-800 w-full">
-            {stats.map((s, idx) => (
-              <div key={idx} className="p-4 text-center">
-                <div className="text-2xl md:text-3xl font-extrabold text-white mb-1">
-                  {s.value}
-                </div>
-                <div className="text-xs text-[#ff7722] font-mono tracking-wider uppercase">{s.label}</div>
-              </div>
-            ))}
+        {/* Operational Metric Pillars */}
+        <div className="mt-24 pt-12 border-t border-surface-border grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+          <div>
+            <div className="font-mono text-xs text-steel uppercase tracking-widest mb-2">Platform Deployment</div>
+            <div className="text-2xl sm:text-3xl font-semibold tracking-tight text-white">Tier-0 Ready</div>
+            <p className="font-body text-xs text-muted mt-1.5">Air-gapped and sovereign enclave compatible.</p>
+          </div>
+          <div>
+            <div className="font-mono text-xs text-steel uppercase tracking-widest mb-2">Assurance Standard</div>
+            <div className="text-2xl sm:text-3xl font-semibold tracking-tight text-white">Continuous</div>
+            <p className="font-body text-xs text-muted mt-1.5">SOC 2 Type II, ISO 27001 algorithmic fidelity.</p>
+          </div>
+          <div>
+            <div className="font-mono text-xs text-steel uppercase tracking-widest mb-2">Agent Framework</div>
+            <div className="text-2xl sm:text-3xl font-semibold tracking-tight text-cobalt-light">Deterministic</div>
+            <p className="font-body text-xs text-muted mt-1.5">Constrained LangGraph state orchestration.</p>
+          </div>
+          <div>
+            <div className="font-mono text-xs text-steel uppercase tracking-widest mb-2">Mission Integrity</div>
+            <div className="text-2xl sm:text-3xl font-semibold tracking-tight text-white">Zero-Tolerance</div>
+            <p className="font-body text-xs text-muted mt-1.5">Zero-hallucination protocols for clinical & audit.</p>
           </div>
         </div>
       </section>
 
-      {/* PRODUCTS SHOWCASE SECTION */}
-      <section id="products" className="relative z-10 px-6 py-20 bg-[#121418] border-y border-zinc-800 w-full flex flex-col items-center">
-        <div className="max-w-7xl mx-auto w-full">
-          <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
-            <span className="inline-block px-3 py-1 rounded-md bg-[#181a20] border border-zinc-800 text-[#ff7722] text-xs font-mono uppercase tracking-wider mb-3">
-              Core Systems
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Enterprise Products & Simulators
-            </h2>
-            <p className="text-zinc-400 text-base md:text-lg">
-              Explore our flagged intelligent solutions engineered for compliance and medical training.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            {products.map((p) => (
-              <div
-                key={p.id}
-                className="group relative rounded-xl border border-zinc-800 bg-[#16181d] overflow-hidden hover:border-[#ff6000]/50 transition-all duration-200 flex flex-col justify-between"
-              >
-                <div>
-                  {/* Media Preview Box */}
-                  <div className="relative w-full h-64 md:h-72 bg-black overflow-hidden border-b border-zinc-800">
-                    <Image
-                      src={p.image}
-                      alt={`${p.title} preview`}
-                      fill
-                      className="object-cover object-top group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#16181d] via-transparent to-transparent opacity-90" />
-                    
-                    <div className="absolute top-4 left-4">
-                      <span className={`inline-flex items-center px-3 py-1 rounded border text-xs font-mono ${p.badgeColor}`}>
-                        {p.badge}
-                      </span>
-                    </div>
-
-                    <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-zinc-300">
-                      <span className="font-mono bg-zinc-950/80 px-2.5 py-1 rounded border border-zinc-800">
-                        {p.category}
-                      </span>
-                      <span className="text-[#ff7722] group-hover:translate-x-1 transition-transform flex items-center gap-1 font-semibold">
-                        Launch System &rarr;
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="p-8">
-                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-[#ff6000] transition-colors">
-                      {p.title}
-                    </h3>
-                    <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                      {p.description}
-                    </p>
-
-                    {/* Features checklist */}
-                    <div className="space-y-2 mb-6">
-                      {p.features.map((feat, idx) => (
-                        <div key={idx} className="flex items-center gap-2 text-xs text-zinc-300">
-                          <svg className="w-4 h-4 text-[#ff6000] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span>{feat}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Tech Tags */}
-                    <div className="flex flex-wrap gap-2">
-                      {p.tags.map((tag) => (
-                        <span key={tag} className="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-400">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="p-8 pt-0">
-                  <Link
-                    href={p.href}
-                    className="btn btn-primary w-full text-center text-xs py-3"
-                  >
-                    View {p.title} System Details
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* RESEARCH AREAS SECTION */}
-      <section id="research" className="relative z-10 px-6 py-24 max-w-7xl mx-auto w-full">
+      {/* ENTERPRISE PLATFORMS */}
+      <section className="py-24 px-6 lg:px-12 max-w-7xl mx-auto w-full border-b border-surface-border" id="platforms">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <span className="inline-block px-3 py-1 rounded-md bg-[#181a20] border border-zinc-800 text-[#ff7722] text-xs font-mono uppercase tracking-wider mb-3">
-              Research Frontiers
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
-              Key Research Domains
-            </h2>
+            <div className="text-[11px] font-mono tracking-widest uppercase text-steel mb-3">Enterprise Suite</div>
+            <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-white">Core Platforms</h2>
           </div>
-          <p className="text-zinc-400 text-sm md:text-base max-w-md">
-            Our labs explore real-world digital twin, autonomous agent, and security domain challenges.
+          <p className="font-body text-steel text-sm md:text-base max-w-md">
+            Institutional software designed to ingest operational complexity, synthesize ground truth, and execute high-fidelity actions across regulatory, medical, and spatial infrastructure.
           </p>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {researchAreas.map((area) => (
+        <div className="space-y-12">
+          {products.map((p) => (
             <div
-              key={area.id}
-              onClick={() => setActiveResearch(activeResearch === area.id ? null : area.id)}
-              className={`cursor-pointer rounded-xl border p-6 transition-all duration-200 flex flex-col justify-between ${
-                area.isFeatured
-                  ? 'border-[#ff6000]/40 bg-[#16181d]'
-                  : 'border-zinc-800 bg-[#121418] hover:border-zinc-700'
-              }`}
+              key={p.id}
+              className="border border-surface-border bg-surface-card p-8 md:p-12 hover:border-surface-border-strong transition-all duration-300"
+              id={`${p.id}-detail`}
             >
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="p-3 rounded-lg bg-zinc-900 text-[#ff7722] border border-zinc-800">
-                    {area.icon}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+                <div className="lg:col-span-4">
+                  <div className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-steel mb-4">
+                    <span className={`w-2 h-2 rounded-full ${p.id === 'augur' ? 'bg-white' : p.id === 'doksim' ? 'bg-cobalt-light' : 'bg-white'}`} />
+                    Platform Pillar • 0{p.id === 'augur' ? 1 : p.id === 'doksim' ? 2 : 3}
                   </div>
-                  {area.isFeatured && (
-                    <span className="px-2.5 py-0.5 rounded bg-[#ff6000]/10 text-[#ff7722] text-[10px] font-mono uppercase tracking-wider border border-[#ff6000]/25">
-                      Featured
-                    </span>
-                  )}
+                  <h3 className="text-2xl md:text-4xl font-semibold tracking-tight text-white mb-3">{p.title}</h3>
+                  <div className="font-mono text-xs text-cobalt-light tracking-wider uppercase mb-6">{p.category}</div>
+                  <p className="font-body text-sm text-steel leading-relaxed mb-6">
+                    {p.description}
+                  </p>
+                  <Link
+                    className="inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-white hover:text-cobalt-light transition-colors"
+                    href="#briefing"
+                  >
+                    <span>Examine {p.title} Deployment</span>
+                    <span className="material-symbols-outlined text-sm">arrow_outward</span>
+                  </Link>
                 </div>
-
-                <h3 className="text-lg font-bold text-white mb-2">{area.title}</h3>
-                <p className="text-xs text-[#ff7722] font-mono mb-3">{area.subtitle}</p>
-                <p className="text-zinc-400 text-sm leading-relaxed mb-4">
-                  {area.description}
-                </p>
-              </div>
-
-              <div>
-                <div className="flex flex-wrap gap-1.5 pt-4 border-t border-zinc-800/80">
-                  {area.tags.map((t) => (
-                    <span key={t} className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-[11px] font-mono text-zinc-400">
-                      #{t}
-                    </span>
-                  ))}
+                <div className="lg:col-span-8 border-t lg:border-t-0 lg:border-l border-surface-border pt-8 lg:pt-0 lg:pl-12 grid grid-cols-1 sm:grid-cols-2 gap-8">
+                  <div>
+                    <h4 className="font-mono text-xs uppercase tracking-widest text-white mb-2">Strategic Capabilities</h4>
+                    <ul className="space-y-3 font-body text-xs text-steel">
+                      {p.features.map((feat, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <span className="w-1 h-1 bg-white mt-1.5 shrink-0" />
+                          <span>{feat}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-mono text-xs uppercase tracking-widest text-white mb-2">Institutional Impact</h4>
+                    <div className="space-y-3 font-body text-xs text-steel">
+                      <p>{p.id === 'augur' && "Eliminates the multi-month latency of institutional compliance filings, creating verifiable, real-time audit readiness for defense and critical banking infrastructure."}
+                      {p.id === 'doksim' && "Scales repeatable, risk-free bedside simulation across university medical systems and clinical licensing bodies with rigorous reproducibility metrics."}
+                      {p.id === 'citytwin' && "Provides sovereign infrastructure operators with predictive operational control to simulate systemic urban or industrial disruptions before real-world cascade failures."}
+                      </p>
+                      <div className="pt-3 border-t border-surface-border font-mono text-[11px] text-muted space-y-1">
+                        {p.id === 'augur' && (
+                          <>
+                            <div>CORE RUNTIME: High-Performance C# / .NET 10 Enclave</div>
+                            <div>DEPLOYMENT: Air-Gapped, Hybrid Sovereign Cloud</div>
+                          </>
+                        )}
+                        {p.id === 'doksim' && (
+                          <>
+                            <div>CORE RUNTIME: Python 3.11 / LangGraph / ChromaDB RAG</div>
+                            <div>FRAMEWORK: Asynchronous Low-Latency Evaluation Engine</div>
+                          </>
+                        )}
+                        {p.id === 'citytwin' && (
+                          <>
+                            <div>CORE RUNTIME: CUDA / PyTorch / WebGPU Accelerated Engine</div>
+                            <div>INTERFACE: Direct Telemetry Bus & High-Fidelity Twin</div>
+                          </>
+                        )}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -341,122 +296,108 @@ export default function Home() {
         </div>
       </section>
 
-      {/* BLOG & PUBLICATIONS SECTION */}
-      <section className="relative z-10 px-6 py-20 border-t border-zinc-800/80 max-w-7xl mx-auto w-full">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#181a20] border border-zinc-800 text-[#ff7722] text-xs font-mono uppercase tracking-wider mb-4">
-              <span className="w-2 h-2 rounded-full bg-[#ff6000]" />
-              Insights & Engineering
-            </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-              Latest Publications
-            </h2>
-          </div>
-          <Link
-            href="/blog"
-            className="mt-4 md:mt-0 text-sm font-mono font-semibold text-[#ff7722] hover:text-[#ff8833] flex items-center gap-1 transition-colors"
-          >
-            Browse All Publications &rarr;
-          </Link>
+      {/* STRATEGIC CAPABILITIES */}
+      <section className="py-24 px-6 lg:px-12 max-w-7xl mx-auto w-full border-b border-surface-border" id="capabilities">
+        <div className="max-w-3xl mb-16">
+          <div className="text-[11px] font-mono tracking-widest uppercase text-steel mb-3">Intelligence & Defense Frontiers</div>
+          <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-white mb-4">Strategic Capabilities</h2>
+          <p className="font-body text-steel text-sm md:text-base leading-relaxed">
+            Where high-stakes artificial intelligence interfaces with sovereign operations, automated defense, and deterministic execution.
+          </p>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <Link
-            href="/blog/kill-switch-era-local-first-ai"
-            className="group p-6 rounded-xl border border-zinc-800 bg-[#14161b] hover:border-zinc-700 transition-all flex flex-col justify-between"
-          >
-            <div>
-              <div className="flex items-center justify-between text-xs font-mono text-zinc-400 mb-3">
-                <span className="px-2 py-0.5 rounded bg-[#ff6000]/10 border border-[#ff6000]/20 text-[#ff7722] font-semibold">
-                  Research
-                </span>
-                <span>13 min read</span>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-surface-border">
+          {capabilities.map((cap) => (
+            <div key={cap.id} className="bg-obsidian p-8 md:p-10 flex flex-col justify-between">
+              <div>
+                <div className="font-mono text-xs text-steel uppercase tracking-widest mb-4">Capability 0{cap.id}</div>
+                <div className="w-10 h-10 border border-surface-border bg-surface flex items-center justify-center text-cobalt-light mb-6">
+                  {cap.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">{cap.title}</h3>
+                <p className="font-body text-xs text-steel leading-relaxed mb-6">
+                  {cap.description}
+                </p>
               </div>
-              <h3 className="text-lg font-bold text-white group-hover:text-[#ff7722] transition-colors mb-2 leading-snug">
-                The Kill Switch Era: Why We&apos;re Going Local-First on AI
-              </h3>
-              <p className="text-zinc-400 text-xs leading-relaxed mb-4 line-clamp-3">
-                With frontier-model access now governed by trade policy and sudden export bans, why As Foretold Research Labs is doubling down on local, open-weight LLMs.
-              </p>
-            </div>
-            <div className="pt-4 border-t border-zinc-800/80 flex items-center justify-between text-xs font-mono text-zinc-400">
-              <span>Jun 27, 2026</span>
-              <span className="text-[#ff7722] group-hover:translate-x-1 transition-transform">&rarr;</span>
-            </div>
-          </Link>
-
-          <Link
-            href="/blog/pax-silica-green-city-ai-zone"
-            className="group p-6 rounded-xl border border-zinc-800 bg-[#14161b] hover:border-zinc-700 transition-all flex flex-col justify-between"
-          >
-            <div>
-              <div className="flex items-center justify-between text-xs font-mono text-zinc-400 mb-3">
-                <span className="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-semibold">
-                  Research
-                </span>
-                <span>12 min read</span>
+              <div className="pt-6 border-t border-surface-border text-[11px] font-mono text-muted uppercase tracking-wider">
+                {cap.tags.join(" • ")}
               </div>
-              <h3 className="text-lg font-bold text-white group-hover:text-[#ff7722] transition-colors mb-2 leading-snug">
-                Pax Silica Should Be a Green City, Not Just an AI Zone
-              </h3>
-              <p className="text-zinc-400 text-xs leading-relaxed mb-4 line-clamp-3">
-                A conditional argument for Pax Silica: if the Philippines hosts AI and semiconductor infrastructure, it should demand a green-tech city under local control.
-              </p>
             </div>
-            <div className="pt-4 border-t border-zinc-800/80 flex items-center justify-between text-xs font-mono text-zinc-400">
-              <span>Jul 26, 2026</span>
-              <span className="text-[#ff7722] group-hover:translate-x-1 transition-transform">&rarr;</span>
-            </div>
-          </Link>
-
-          <Link
-            href="/blog/canvas-instructure-breach-edtech-security"
-            className="group p-6 rounded-xl border border-zinc-800 bg-[#14161b] hover:border-zinc-700 transition-all flex flex-col justify-between"
-          >
-            <div>
-              <div className="flex items-center justify-between text-xs font-mono text-zinc-400 mb-3">
-                <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300 font-semibold">
-                  Cybersecurity
-                </span>
-                <span>14 min read</span>
-              </div>
-              <h3 className="text-lg font-bold text-white group-hover:text-[#ff7722] transition-colors mb-2 leading-snug">
-                The Canvas Breach Is a Warning: Why EdTech Platforms Are Soft Targets
-              </h3>
-              <p className="text-zinc-400 text-xs leading-relaxed mb-4 line-clamp-3">
-                The 2026 ShinyHunters breach of Instructure&apos;s Canvas exposed around 275M records across 9,000 institutions. What it means for sensitive data handling.
-              </p>
-            </div>
-            <div className="pt-4 border-t border-zinc-800/80 flex items-center justify-between text-xs font-mono text-zinc-400">
-              <span>Jun 27, 2026</span>
-              <span className="text-[#ff7722] group-hover:translate-x-1 transition-transform">&rarr;</span>
-            </div>
-          </Link>
+          ))}
         </div>
       </section>
 
-      {/* COLLABORATION CTA SECTION */}
-      <section className="relative z-10 px-6 py-20 bg-[#121418] border-t border-zinc-800 w-full flex flex-col items-center">
-        <div className="max-w-4xl mx-auto rounded-2xl border border-zinc-800 bg-[#16181d] p-10 md:p-16 text-center shadow-xl relative overflow-hidden flex flex-col items-center w-full">
-          <div className="relative z-10 flex flex-col items-center">
-            <span className="inline-block px-3.5 py-1 rounded-md bg-[#181a20] text-[#ff7722] text-xs font-mono uppercase tracking-wider mb-6 border border-zinc-800">
-              Partner With Us
-            </span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6">
-              Collaborate on Next-Gen Systems
-            </h2>
-            <p className="text-zinc-400 text-base md:text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
-              Whether you are looking to integrate Augur compliance automation or deploy DokSim clinical simulations, our engineering team is ready to discuss pilot deployments.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/contact" className="btn btn-primary text-sm py-3 px-7">
-                Get in Touch
-              </Link>
-              <Link href="/about" className="btn btn-secondary text-sm py-3 px-7">
-                Read Research Overview
-              </Link>
-            </div>
+      {/* STRATEGIC INTELLIGENCE / PUBLICATIONS */}
+      <section className="py-24 px-6 lg:px-12 max-w-7xl mx-auto w-full border-b border-surface-border" id="intelligence">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div>
+            <div className="text-[11px] font-mono tracking-widest uppercase text-steel mb-3">Dispatches</div>
+            <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-white">Strategic Intelligence</h2>
+          </div>
+          <Link
+            className="text-xs font-mono tracking-widest uppercase text-steel hover:text-white transition-colors"
+            href="/intelligence"
+          >
+            View All Briefings →
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {publications.map((pub) => (
+            <article key={pub.slug} className="border border-surface-border bg-surface p-8 flex flex-col justify-between hover:border-surface-border-strong transition-all">
+              <div>
+                <div className="flex items-center justify-between text-[11px] font-mono text-steel uppercase tracking-widest mb-6">
+                  <span>{pub.category}</span>
+                  <span>{pub.date} · {pub.readTime}</span>
+                </div>
+                <Link href={pub.slug} className="block">
+                  <h3 className="text-lg font-semibold text-white tracking-tight mb-4 leading-snug hover:text-cobalt-light transition-colors">
+                    {pub.title}
+                  </h3>
+                </Link>
+                <p className="font-body text-xs text-steel leading-relaxed mb-8">
+                  {pub.excerpt}
+                </p>
+              </div>
+              <div className="pt-4 border-t border-surface-border flex items-center justify-between text-xs font-mono text-steel hover:text-white transition-colors">
+                <span className="uppercase tracking-widest">Read Briefing</span>
+                <span>→</span>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* INSTITUTIONAL ENGAGEMENT CTA */}
+      <section className="py-24 md:py-32 px-6 lg:px-12 max-w-7xl mx-auto w-full" id="briefing">
+        <div className="border border-surface-border bg-surface-card p-8 md:p-16 text-center max-w-4xl mx-auto relative overflow-hidden subtle-glow">
+          <div className="inline-flex items-center gap-2 px-3 py-1 font-mono text-[11px] uppercase tracking-widest text-steel border border-surface-border bg-obsidian mb-6">
+            Institutional Engagement
+          </div>
+          <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-white mb-6">
+            Deploy Mission Architecture
+          </h2>
+          <p className="font-body text-steel text-sm md:text-base leading-relaxed max-w-2xl mx-auto mb-10">
+            Consult with our systems architecture team regarding production deployments of Augur, DokSim, or CityTwin across sovereign cloud, hybrid enterprise, or air-gapped enclaves.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Link
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-obsidian text-xs font-mono font-semibold tracking-widest uppercase hover:bg-neutral-200 transition-colors"
+              href="mailto:velasquez.marcvictor.l@asforetold.space?subject=Request%20Institutional%20Briefing"
+            >
+              Request Institutional Briefing
+            </Link>
+            <Link
+              className="inline-flex items-center justify-center px-8 py-4 border border-surface-border bg-obsidian text-white text-xs font-mono tracking-widest uppercase hover:border-white/30 transition-colors"
+              href="#platforms"
+            >
+              Review Technical Specifications
+            </Link>
+          </div>
+          <div className="mt-12 pt-8 border-t border-surface-border/60 flex flex-wrap items-center justify-center gap-6 font-mono text-[11px] text-muted">
+            <span>SOC 2 TYPE II VERIFIED</span>
+            <span>•</span>
+            <span>AIR-GAPPED COMPLIANT</span>
+            <span>•</span>
+            <span>DIRECT: velasquez.marcvictor.l@asforetold.space</span>
           </div>
         </div>
       </section>
