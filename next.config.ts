@@ -1,17 +1,19 @@
 import type { NextConfig } from "next";
-
-const isGitHubPages = process.env.GITHUB_PAGES === 'true';
-const repoName = process.env.GITHUB_REPOSITORY?.split('/')[1] || '';
+import createMDX from "@next/mdx";
 
 const nextConfig: NextConfig = {
-  output: isGitHubPages ? "export" : "standalone",
+  output: "standalone",
   images: {
-    unoptimized: isGitHubPages,
     remotePatterns: [],
   },
-  basePath: isGitHubPages ? `/${repoName}` : '',
-  assetPrefix: isGitHubPages ? `/${repoName}/` : '',
-  trailingSlash: isGitHubPages,
+  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
 };
 
-export default nextConfig;
+const withMDX = createMDX({
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+  },
+});
+
+export default withMDX(nextConfig);
