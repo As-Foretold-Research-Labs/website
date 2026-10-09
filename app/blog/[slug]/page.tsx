@@ -1,8 +1,12 @@
-"use client";
-
 import { use } from "react";
 import Link from "next/link";
 import { BLOG_POSTS } from "@/app/lib/blog-data";
+
+export function generateStaticParams() {
+  return BLOG_POSTS.map((post) => ({
+    slug: post.slug,
+  }));
+}
 
 // Helper to format inline markdown (bold, code, links)
 function renderInlineMarkdown(text: string) {
